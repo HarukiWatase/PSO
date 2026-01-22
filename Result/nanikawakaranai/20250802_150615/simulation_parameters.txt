@@ -1,0 +1,6 @@
+--- Simulation Parameters ---
+num_node: 100
+num_par: 200
+num_gen: 200
+
+Timestamp: 2025-08-02 15:06:15

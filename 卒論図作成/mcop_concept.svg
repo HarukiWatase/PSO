@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" style="background-color:#FFFFFF; font-family:'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2D3436" /></marker>
+<marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0984E3" /></marker>
+<marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#D63031" /></marker>
+<marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#E17055" /></marker>
+</defs>
+<line x1="80" y1="340" x2="560" y2="340" stroke="#2D3436" stroke-width="2" marker-end="url(#arrow)" />
+<text x="560" y="380" font-size="14" text-anchor="end" font-weight="bold">遅延 (Delay) → 小</text>
+<line x1="80" y1="340" x2="80" y2="40" stroke="#2D3436" stroke-width="2" marker-end="url(#arrow)" />
+<text x="80" y="20" font-size="14" text-anchor="middle" font-weight="bold">帯域 (Bandwidth) ↑ 大</text>
+<line x1="400" y1="60" x2="400" y2="340" stroke="#D63031" stroke-width="2" stroke-dasharray="6,4" />
+<text x="400" y="50" font-size="14" fill="#D63031" font-weight="bold" text-anchor="middle">制約 $D_{max}$</text>
+<rect x="80" y="60" width="320" height="280" fill="#E0F7FA" opacity="0.6" />
+<text x="240" y="320" font-size="16" fill="#0984E3" font-weight="bold" text-anchor="middle">実行可能領域 (Feasible)</text>
+<text x="480" y="240" font-size="12" fill="#636E72" text-anchor="middle">制約違反エリア</text>
+<circle cx="180" cy="240" r="5" fill="#2D3436" stroke="none" />
+<circle cx="260" cy="200" r="5" fill="#2D3436" stroke="none" />
+<circle cx="330" cy="80" r="8" fill="#0984E3" stroke="#2D3436" stroke-width="2" />
+<text x="315" y="65" font-size="14" font-weight="bold" fill="#0984E3" text-anchor="end">最適解 (Best)</text>
+<path d="M 318 68 L 280 40" stroke="#2D3436" stroke-width="1" />
+<circle cx="500" cy="20" r="5" fill="#636E72" stroke="none" opacity="0.5" />
+<text x="500" y="10" font-size="11" fill="#636E72" text-anchor="middle">制約違反</text>
+<circle cx="460" cy="190" r="5" fill="#636E72" stroke="none" opacity="0.5" />
+<text x="460" y="180" font-size="11" fill="#636E72" text-anchor="middle">制約違反</text>
+</svg>

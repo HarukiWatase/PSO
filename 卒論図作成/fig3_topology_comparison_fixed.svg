@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="550" viewBox="0 0 1100 550" style="background-color:#FFFFFF;">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#2C3E50" /></marker>
+<marker id="arrow_small" markerWidth="8" markerHeight="8" refX="8" refY="2.5" orient="auto"><polygon points="0 0, 8 2.5, 0 5" fill="#7F8C8D" /></marker>
+</defs>
+<text x="275.0" y="520" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="20" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">(a) gBest Model (Global)</text>
+<line x1="353.2516154986853" y1="250.45605011056128" x2="294.9663655892816" y2="253.84058413192207" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="320.49883778815195" y1="308.8662024657581" x2="287.9055737534164" y2="270.2789451892181" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="283.6430402003357" y1="336.32342293049953" x2="277.1136927703584" y2="274.8879939378645" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="225.5101087305922" y1="324.6257771150394" x2="263.4129101015761" y2="271.30151366241313" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="204.91511059767993" y1="267.70373363674304" x2="255.32067859699825" y2="258.56711495712676" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="222.23951324139003" y1="214.71637878982673" x2="259.10374199079473" y2="242.86290886147847" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="265.5485678504126" y1="142.59822665264798" x2="273.32419099199166" y2="235.0703320607523" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="361.30386799991663" y1="179.40457076665018" x2="290.0446600037856" y2="241.8220561023165" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<circle cx="367.22807141118244" cy="249.64445900290673" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<text x="367.22807141118244" y="224.64445900290673" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#3498DB" text-anchor="middle" dominant-baseline="middle"><tspan font-family="'Times New Roman', 'Times', serif" font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="70%">1</tspan></text>
+<circle cx="329.5327394155434" cy="319.56146409821076" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<text x="329.5327394155434" y="294.56146409821076" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#3498DB" text-anchor="middle" dominant-baseline="middle"><tspan font-family="'Times New Roman', 'Times', serif" font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="70%">2</tspan></text>
+<circle cx="285.12262513958655" cy="350.2450186870047" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="217.39914580169545" cy="336.0368366787286" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="191.1395856155787" cy="270.20071410673177" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="211.11213263494636" cy="206.22041499286166" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="264.37550154480675" cy="128.64745909517458" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="371.83513000256653" cy="170.18001003827172" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="275.0" cy="255.0" r="15" fill="#E74C3C" stroke="#FFFFFF" stroke-width="3"  />
+<text x="275.0" y="285.0" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#E74C3C" text-anchor="middle" dominant-baseline="middle"><tspan font-family="'Times New Roman', 'Times', serif" font-style="italic">gBest</tspan></text>
+<text x="275.0" y="40" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#7F8C8D" text-anchor="middle" dominant-baseline="middle">全粒子が唯一の最良解を共有</text>
+<text x="825.0" y="520" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="20" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">(b) lBest Model (Spatial Groups)</text>
+<circle cx="687.5" cy="275.0" r="105" fill="#ECF0F1" stroke="#BDC3C7" stroke-width="2" stroke-dasharray="5 3" />
+<line x1="756.7198817649095" y1="259.2010136891017" x2="706.9985582436365" y2="270.5495813208737" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="743.0100352552302" y1="319.26777593197005" x2="703.1366296493607" y2="287.46979603717466" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="687.5" y1="346.0" x2="687.5" y2="295.0" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="631.9899647447698" y1="319.26777593197005" x2="671.8633703506393" y2="287.46979603717466" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="618.2801182350905" y1="259.2010136891017" x2="668.0014417563635" y2="270.5495813208737" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<circle cx="770.368872535455" cy="256.0857206137133" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="753.9556760097826" cy="327.99663315799233" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="687.5" cy="360.0" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<text x="687.5" y="335.0" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#3498DB" text-anchor="middle" dominant-baseline="middle"><tspan font-family="'Times New Roman', 'Times', serif" font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="70%">i</tspan></text>
+<circle cx="621.0443239902174" cy="327.99663315799233" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="604.631127464545" cy="256.0857206137133" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="687.5" cy="275.0" r="15" fill="#E74C3C" stroke="#FFFFFF" stroke-width="3"  />
+<text x="687.5" y="305.0" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#E74C3C" text-anchor="middle" dominant-baseline="middle"><tspan font-family="'Times New Roman', 'Times', serif" font-style="italic">lBest</tspan><tspan baseline-shift="sub" font-size="70%">1</tspan></text>
+<circle cx="962.5" cy="275.0" r="105" fill="#ECF0F1" stroke="#BDC3C7" stroke-width="2" stroke-dasharray="5 3" />
+<line x1="893.2801182350905" y1="290.7989863108983" x2="943.0014417563635" y2="279.4504186791263" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="906.9899647447698" y1="230.7322240680299" x2="946.8633703506395" y2="262.53020396282534" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="962.5" y1="204.0" x2="962.5" y2="255.0" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="1018.0100352552302" y1="230.73222406802992" x2="978.1366296493607" y2="262.53020396282534" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<line x1="1031.7198817649096" y1="290.7989863108983" x2="981.9985582436365" y2="279.4504186791263" stroke="#3498DB" stroke-width="3" marker-end="url(#arrow)"  />
+<circle cx="879.631127464545" cy="293.9142793862867" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="896.0443239902174" cy="222.00336684200764" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="962.5" cy="190.0" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<text x="962.5" y="165.0" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#3498DB" text-anchor="middle" dominant-baseline="middle"><tspan font-family="'Times New Roman', 'Times', serif" font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="70%">j</tspan></text>
+<circle cx="1028.9556760097826" cy="222.00336684200767" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="1045.368872535455" cy="293.9142793862867" r="12" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="962.5" cy="275.0" r="15" fill="#E74C3C" stroke="#FFFFFF" stroke-width="3"  />
+<text x="962.5" y="305.0" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#E74C3C" text-anchor="middle" dominant-baseline="middle"><tspan font-family="'Times New Roman', 'Times', serif" font-style="italic">lBest</tspan><tspan baseline-shift="sub" font-size="70%">2</tspan></text>
+<text x="825.0" y="40" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#7F8C8D" text-anchor="middle" dominant-baseline="middle">距離が近い集団内で最良解を共有</text>
+<text x="825.0" y="65" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#7F8C8D" text-anchor="middle" dominant-baseline="middle">(空間的な派閥形成)</text>
+</svg>

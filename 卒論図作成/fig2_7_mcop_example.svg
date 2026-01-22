@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" style="background-color:#FFFFFF; font-family:'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;">
+<defs>
+<filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceAlpha" stdDeviation="2"/><feOffset dx="1" dy="1" result="offsetblur"/><feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="24" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0984E3" /></marker>
+<marker id="arrowRed" markerWidth="10" markerHeight="7" refX="24" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#D63031" /></marker>
+</defs>
+<line x1="100" y1="250" x2="300" y2="120" stroke="#D63031" stroke-width="3" marker-end="url(#arrowRed)" />
+<text x="200.0" y="170.0" font-size="12" font-weight="bold" fill="#D63031" text-anchor="middle">200 Mbps</text>
+<text x="200.0" y="210.0" font-size="12" fill="#636E72" text-anchor="middle">10 ms</text>
+<line x1="300" y1="120" x2="500" y2="120" stroke="#D63031" stroke-width="3" marker-end="url(#arrowRed)" />
+<text x="400.0" y="100.0" font-size="12" font-weight="bold" fill="#D63031" text-anchor="middle">100 Mbps</text>
+<text x="400.0" y="150.0" font-size="12" fill="#636E72" text-anchor="middle">10 ms</text>
+<line x1="500" y1="120" x2="700" y2="250" stroke="#D63031" stroke-width="3" marker-end="url(#arrowRed)" />
+<text x="600.0" y="170.0" font-size="12" font-weight="bold" fill="#D63031" text-anchor="middle">150 Mbps</text>
+<text x="600.0" y="210.0" font-size="12" fill="#636E72" text-anchor="middle">10 ms</text>
+<line x1="100" y1="250" x2="300" y2="380" stroke="#0984E3" stroke-width="3" marker-end="url(#arrowBlue)" />
+<text x="200.0" y="300.0" font-size="12" font-weight="bold" fill="#0984E3" text-anchor="middle">80 Mbps</text>
+<text x="200.0" y="340.0" font-size="12" fill="#636E72" text-anchor="middle">5 ms</text>
+<line x1="300" y1="380" x2="500" y2="380" stroke="#0984E3" stroke-width="3" marker-end="url(#arrowBlue)" />
+<text x="400.0" y="360.0" font-size="12" font-weight="bold" fill="#0984E3" text-anchor="middle">120 Mbps</text>
+<text x="400.0" y="410.0" font-size="12" fill="#636E72" text-anchor="middle">5 ms</text>
+<line x1="500" y1="380" x2="700" y2="250" stroke="#0984E3" stroke-width="3" marker-end="url(#arrowBlue)" />
+<text x="600.0" y="300.0" font-size="12" font-weight="bold" fill="#0984E3" text-anchor="middle">130 Mbps</text>
+<text x="600.0" y="340.0" font-size="12" fill="#636E72" text-anchor="middle">5 ms</text>
+<circle cx="100" cy="250" r="20" fill="#FFFFFF" stroke="#2D3436" stroke-width="2" filter="url(#softShadow)" />
+<text x="100" y="250" dy="6" font-size="16" font-weight="bold" fill="#2D3436" text-anchor="middle">S</text>
+<circle cx="300" cy="120" r="20" fill="#FFFFFF" stroke="#2D3436" stroke-width="2" filter="url(#softShadow)" />
+<circle cx="300" cy="120" r="4" fill="#636E72" />
+<circle cx="500" cy="120" r="20" fill="#FFFFFF" stroke="#2D3436" stroke-width="2" filter="url(#softShadow)" />
+<circle cx="500" cy="120" r="4" fill="#636E72" />
+<circle cx="700" cy="250" r="20" fill="#FFFFFF" stroke="#2D3436" stroke-width="2" filter="url(#softShadow)" />
+<text x="700" y="250" dy="6" font-size="16" font-weight="bold" fill="#2D3436" text-anchor="middle">D</text>
+<circle cx="300" cy="380" r="20" fill="#FFFFFF" stroke="#2D3436" stroke-width="2" filter="url(#softShadow)" />
+<circle cx="300" cy="380" r="4" fill="#636E72" />
+<circle cx="500" cy="380" r="20" fill="#FFFFFF" stroke="#2D3436" stroke-width="2" filter="url(#softShadow)" />
+<circle cx="500" cy="380" r="4" fill="#636E72" />
+<text x="100" y="295" font-size="14" font-weight="bold" fill="#2D3436" text-anchor="middle">Start</text>
+<text x="700" y="295" font-size="14" font-weight="bold" fill="#2D3436" text-anchor="middle">Goal</text>
+<rect x="200" y="30" width="400" height="30" rx="4" fill="#FFEBEE" stroke="#D63031" />
+<text x="400" y="50" font-size="13" font-weight="bold" fill="#D63031" text-anchor="middle">経路A: Min=100Mbps, Delay=30ms (× 制約違反)</text>
+<rect x="200" y="450" width="400" height="30" rx="4" fill="#E0F7FA" stroke="#0984E3" />
+<text x="400" y="470" font-size="13" font-weight="bold" fill="#0984E3" text-anchor="middle">経路B: Min=80Mbps, Delay=15ms (○ 実行可能解)</text>
+<text x="100" y="30" font-size="12" fill="#2D3436" text-anchor="start" font-weight="bold">[目的] ボトルネック最大化</text>
+<text x="100" y="50" font-size="12" fill="#2D3436" text-anchor="start" font-weight="bold">[制約] 合計遅延 20ms以内</text>
+</svg>

@@ -1,0 +1,231 @@
+\documentclass[a4paper,11pt]{jsarticle}
+% 画像を表示させるために [dvipdfmx] を使用
+
+\usepackage{url}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[dvipdfmx]{graphicx}
+% --- 色の定義 ---
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+% --- コード表示の設定 ---
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  commentstyle=\color{gray},
+  keywordstyle=\color{blue},
+  stringstyle=\color{red},
+  frame=single,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny,
+  captionpos=b
+}
+
+% --- 番号フォーマットの変更 ---
+\renewcommand{\thesection}{\alph{section}.}
+
+\title{画像処理特論 演習課題3 レポート}
+\author{学修番号: 22141073 \quad 氏名: 渡瀬 遥己}
+\date{2025年12月28日}
+
+\begin{document}
+
+\maketitle
+
+\section{アルゴリズムの要約}
+
+本課題では、Bag of Visual Wordsモデルに基づく画像特徴表現と、教師あり機械学習アルゴリズムを組み合わせた一般物体認識モデルを構築した。
+本モデルの全体的な処理フローは以下の通りである。
+
+まず、各画像からSIFTアルゴリズムを用いて局所特徴量を抽出する。次に、課題2で学習データから構築したコードブックを用いて、抽出された特徴ベクトルをVisual Wordへ量子化する。これに基づき、画像ごとのVisual Wordの出現頻度を表すヒストグラムを作成し、L2正規化を施したものを識別器への入力ベクトルとした。これにより、可変長の局所特徴量を固定長のベクトル表現へ変換し、一般的な機械学習アルゴリズムでの扱いを可能にしている。
+
+識別器の実装には、scikit-learnライブラリを用い、以下の3つの異なるアルゴリズムを採用して比較検証を行った。
+
+\begin{itemize}
+    \item Linear SVM\\
+    サポートベクターマシンは、特徴空間においてクラス間を最も広く分離するマージン最大化に基づく手法である。ここでは最も基本的な線形カーネルを用いたモデルを構築し、課題2のヒストグラム交差法からの発展形として、機械学習モデルのベースラインとして位置づけた。
+    
+    \item RBF Kernel SVM\\
+    実際の画像データの特徴空間は複雑に入り組んでおり、線形分離が困難な場合が多い。そこで、放射基底関数カーネルすなわちRBFカーネルを採用した。これはデータを高次元空間へ写像することで非線形な境界線の学習を可能にする手法である。本実験ではグリッドサーチによりパラメータを最適化し、識別精度の最大化を図った。
+    
+    \item Random Forest\\
+    複数の決定木を学習させ、それらの予測結果の多数決によってクラスを分類するアンサンブル学習手法である。個々の決定木が学習データの異なる部分集合や特徴量を用いて学習するため、単一のモデルよりも過学習を起こしにくいという特性を持つ。SVMとは数学的背景が異なるアルゴリズム特性を持つ比較対象として採用した。
+\end{itemize}
+
+また、データセットに含まれる画像枚数がカテゴリによって異なる不均衡データであるため、学習時には各クラスのサンプル数に応じて損失関数の重みを調整する設定class\_weight='balanced'を導入し、特定のクラスへの偏りを防ぐ工夫を行った。
+
+\section{実験条件}
+
+\subsection*{(ア) カテゴリの種類}
+bonsai, brain, elephant, emu, kangaroo, metronome, pizza, snoopy, watch, wild\_catの計10種類である。
+
+\subsection*{(イ) 画像枚数}
+全822枚の画像セットを使用し、そのうち約70\%にあたる571枚を学習用、残りの約30\%にあたる251枚を識別用として分割した。
+
+\subsection*{(ウ) 局所特徴量}
+SIFT
+
+\subsection*{(エ) K-meansのKの個数}
+$K=600$
+
+\subsection*{(オ) 識別器の訓練において設定したパラメータ}
+グリッドサーチ等の探索により、以下のように設定した。
+\begin{itemize}
+    \item Linear SVM: kernel='linear', C=1.0, class\_weight='balanced'
+    \item RBF Kernel SVM: kernel='rbf', C=100, gamma=0.01, class\_weight='balanced'
+    \item Random Forest: n\_estimators=100, class\_weight='balanced'
+\end{itemize}
+
+\section{識別結果}
+
+\subsection*{(ア) 識別率および混同行列}
+各モデルにおける全体の平均識別率を表1に示す。
+最も高い識別率を示したRBF Kernel SVMにおける混同行列を図1に示す。
+混同行列の対角成分は正しく分類された枚数を示しており、非対角成分は誤分類を示している。
+
+\begin{table}[h]
+    \centering
+    \caption{各手法の識別率の比較}
+    \begin{tabular}{lc}
+        \toprule
+        使用モデル & 平均識別率 \\
+        \midrule
+        Linear SVM & 67.33\% \\
+        RBF Kernel SVM & 71.31\% \\
+        Random Forest & 55.38\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+    \centering
+    % 生成した英語ファイル名を指定
+    \includegraphics[width=10cm]{syoritokuron.png}
+    \caption{RBF Kernel SVMにおける混同行列}
+    \label{fig:confusion_matrix}
+\end{figure}
+
+\subsection*{(イ) 課題2との比較}
+課題2で実装したSVMを用いないヒストグラム交差法と、今回実装した機械学習モデルであるRBF Kernel SVMの比較を表2に示す。
+なお、課題2の記録は前回のレポート数値である$K=100$のときの値を参照している。
+
+\begin{table}[h]
+    \centering
+    \caption{課題2（機械学習なし）と課題3（機械学習あり）の比較}
+    \begin{tabular}{lcc}
+        \toprule
+        手法 & アルゴリズム & 識別率 \\
+        \midrule
+        課題2 & 平均値プーリング + ヒストグラム交差法 & 33.86\% \\
+        課題3 & BoVW + RBF Kernel SVM & 71.31\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+機械学習を導入することで、識別率が2倍以上に大幅に向上したことが確認できる。
+
+\section{考察}
+
+\subsection*{識別精度の向上について}
+表2に示した通り、ヒストグラム交差法による単純な類似度比較では33.86\%であった精度が、RBFカーネルを用いたSVMを導入することで71.31\%まで向上した。
+これは、単純なユークリッド距離や交差法では捉えきれない複雑な特徴空間の分布に対し、SVMがマージン最大化によって最適な決定境界を学習できたためであると考えられる。
+また、Linear SVMの67.33\%と比較してもRBF Kernel SVMの方が高精度であったことから、BoVWの特徴空間は線形分離不可能であり、カーネル法による非線形分離が有効に機能したと言える。
+
+\subsection*{誤分類の分析}
+混同行列である図1を確認すると、watchやbrainといった形状やテクスチャが安定しているカテゴリは高い識別率を示している。
+一方で、wild\_catやkangarooなどの動物カテゴリは識別率が低く、他のカテゴリと混同される傾向が見られた。
+これは、BoVWが画像内の位置情報を保持しないモデルであるため、動物の背景にある草むらや自然風景のVisual Wordを強く学習してしまい、背景が似ている他カテゴリと区別がつかなくなったことが原因と推察される。
+
+\subsection*{Random Forestとの比較}
+今回比較対象として用いたRandom Forestは識別率55.38\%にとどまり、SVMに及ばなかった。
+一般にRandom Forestは、十分な学習データが存在する場合に高い性能を発揮する手法である。
+しかし、本実験では特徴量であるVisual Wordの次元数が600であるのに対し、学習データ数は571枚と少ない。
+このようにデータの次元数が高く、かつデータ数が少ない条件下では、特徴空間全体を網羅的に学習することが困難となる。
+そのため、空間を細かく分割してルールを作成する決定木ベースの手法は、有効な境界を見つけにくくなる。
+対してSVMは、データ同士の距離に基づくマージン最大化によって境界を決定するため、データ数が少ない高次元データであっても過学習を抑えつつ、高い汎化性能を維持できたと考えられる。
+
+\section{自分なりの工夫}
+
+本課題では、単に指定された機械学習モデルを適用するだけでなく、以下の工夫を行うことで最適なモデルの構築を試みた。
+
+\begin{enumerate}
+    \item 段階的なモデルの拡張と比較\\
+    はじめに線形SVMを実装し、次に非線形カーネルであるRBFへの拡張、さらに異なるアルゴリズムであるRandom Forestとの比較を行った。複数の手法を比較検証することで、本データセットにおけるSVMの優位性を客観的に示した。
+    
+    \item グリッドサーチによるパラメータ最適化\\
+    SVMの性能を決定づけるハイパーパラメータであるCおよびgammaについて、手動設定ではなくGridSearchCVを用いた網羅的な探索を行った。これにより、ペナルティ項C=100という、誤分類を厳しく抑制する設定が最適であることを突き止め、識別率を最大化させた。
+    
+    \item 不均衡データへの対策\\
+    カテゴリごとの画像枚数に偏りがあるため、すべてのモデルにおいてclass\_weight='balanced'を設定した。これにより、metronomeなど画像枚数が少ないカテゴリが見過ごされることを防ぎ、全体の識別バランスを保つよう設計した。
+\end{enumerate}
+
+\appendix
+\renewcommand{\thesection}{\Alph{section}.}
+
+\section{付録: 主要ソースコード}
+本実験の実装に使用した主要なPythonコードを以下に示す。
+
+\subsection*{テストデータのヒストグラム変換}
+学習済みのCodebookとSIFTを用いて、テスト画像をBoVW特徴量である正規化ヒストグラムに変換する処理である。
+
+\begin{lstlisting}[caption=テストデータの準備]
+def image_to_histogram(img_path, sift_detector, codebook_centroids):
+    K_local = codebook_centroids.shape[0]
+    img = cv2.imread(img_path)
+    if img is None: return None
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    keypoints, descriptors = sift_detector.detectAndCompute(gray, None)
+    
+    if descriptors is None or len(descriptors) == 0:
+        return np.zeros(K_local)
+    
+    # 全Visual Wordとのユークリッド距離を計算
+    dists = distance.cdist(descriptors, codebook_centroids, 'euclidean')
+    visual_word_indices = np.argmin(dists, axis=1)
+    histogram, _ = np.histogram(visual_word_indices, bins=K_local, range=(0, K_local))
+    
+    # L2正規化
+    norm = np.linalg.norm(histogram)
+    if norm > 0:
+        histogram = histogram.astype(float) / norm
+    return histogram
+
+# 全テスト画像の変換処理
+X_test = []
+y_test = []
+# (ループ処理部分は省略)
+\end{lstlisting}
+
+\subsection*{モデルの学習とGridSearchCVによる最適化}
+Linear SVM、RBF Kernel SVM、Random Forestの各モデルを定義し、GridSearchCVを用いてRBFカーネルの最適パラメータCとgammaを探索する処理である。
+
+\begin{lstlisting}[caption=識別器の学習と評価]
+# 1. Linear SVM (ベースライン)
+clf_linear = SVC(kernel='linear', C=1.0, class_weight='balanced')
+clf_linear.fit(X_train, y_train)
+
+# 2. RBF SVM + Grid Search (提案手法)
+param_grid = {
+    'C': [1, 10, 100, 1000],
+    'gamma': ['scale', 0.01, 0.001, 0.0001],
+    'class_weight': ['balanced']
+}
+grid_search = GridSearchCV(
+    SVC(kernel='rbf'), 
+    param_grid, 
+    cv=3, 
+    n_jobs=-1
+)
+grid_search.fit(X_train, y_train)
+best_model = grid_search.best_estimator_
+
+# 3. Random Forest (比較用)
+clf_rf = RandomForestClassifier(n_estimators=100, class_weight='balanced')
+clf_rf.fit(X_train, y_train)
+\end{lstlisting}
+
+\end{document}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" style="background-color:#FFFFFF;">
+<rect x="10" y="20" width="400" height="380" rx="15" ry="15" fill="none" stroke="#BDC3C7" stroke-width="3" />
+<text x="210.0" y="70" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="48" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">探索停滞</text>
+<circle cx="210.0" cy="260.0" r="130" fill="none" stroke="#ECF0F1" stroke-width="3"  />
+<circle cx="210.0" cy="260.0" r="95" fill="none" stroke="#ECF0F1" stroke-width="3"  />
+<circle cx="210.0" cy="260.0" r="60" fill="none" stroke="#ECF0F1" stroke-width="3"  />
+<circle cx="213.47464668288944" cy="255.05169985012262" r="14" fill="#E74C3C" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="208.9055178734296" cy="294.3524269561145" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="188.8187342933474" cy="266.95717128190944" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="217.0639617864846" cy="231.5419328988246" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="214.15686220569972" cy="260.74831892427034" r="14" fill="#E74C3C" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="175.69672015268176" cy="275.4192798891585" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="244.29960047622612" cy="260.45390362219905" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="206.43509866334028" cy="240.2771648201482" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="219.6916257611642" cy="256.5294090252903" r="14" fill="#E74C3C" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="249.81728112515685" cy="267.74863426711005" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="208.8934814297155" cy="259.7054025915676" r="14" fill="#E74C3C" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="178.97452317782728" cy="288.69620387090714" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="201.39697315003718" cy="264.5816382620677" r="14" fill="#E74C3C" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="210.23121858206449" cy="261.28621803626737" r="14" fill="#E74C3C" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="190.301879208314" cy="260.5184257315689" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<polygon points="435.0,180.0 485.0,200.0 435.0,220.0" fill="#2C3E50" />
+<rect x="510" y="20" width="400" height="380" rx="15" ry="15" fill="none" stroke="#BDC3C7" stroke-width="3" />
+<text x="710.0" y="70" font-family="'Yu Gothic', 'Meiryo', sans-serif" font-size="48" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">リスタート戦略</text>
+<circle cx="710.0" cy="260.0" r="130" fill="none" stroke="#ECF0F1" stroke-width="3"  />
+<circle cx="710.0" cy="260.0" r="95" fill="none" stroke="#ECF0F1" stroke-width="3"  />
+<circle cx="710.0" cy="260.0" r="60" fill="none" stroke="#ECF0F1" stroke-width="3"  />
+<circle cx="710.0" cy="260.0" r="20" fill="#E74C3C" stroke="#FFFFFF" stroke-width="4"  />
+<circle cx="855.9309670045598" cy="347.4785968942439" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="568.0964376725788" cy="140.36927883814118" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="817.3596410014238" cy="296.6327973764456" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="764.3137284608707" cy="193.9527498213946" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="735.985285475841" cy="158.01188886115335" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="781.363865995989" cy="358.75669510793824" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="853.806551389838" cy="250.602491383037" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="692.3533403922731" cy="184.37777799583876" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="561.4957854057144" cy="126.58676570179657" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+<circle cx="671.6047750082278" cy="334.029469878789" r="14" fill="#3498DB" stroke="#FFFFFF" stroke-width="2"  />
+</svg>

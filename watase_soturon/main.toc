@@ -1,0 +1,41 @@
+\contentsline {chapter}{\numberline {第1章}序論}{1}{}%
+\contentsline {section}{\numberline {1.1}研究背景}{1}{}%
+\contentsline {section}{\numberline {1.2}ネットワーク経路制御の課題}{2}{}%
+\contentsline {section}{\numberline {1.3}研究目的}{2}{}%
+\contentsline {section}{\numberline {1.4}本論文の構成}{3}{}%
+\contentsline {chapter}{\numberline {第2章}ネットワークグラフ問題}{4}{}%
+\contentsline {section}{\numberline {2.1}グラフ理論の基礎定義}{4}{}%
+\contentsline {section}{\numberline {2.2}最短経路問題}{6}{}%
+\contentsline {section}{\numberline {2.3}最大ボトルネックリンク問題}{6}{}%
+\contentsline {section}{\numberline {2.4}多制約最適経路問題 (MCOP)}{7}{}%
+\contentsline {chapter}{\numberline {第3章}粒子群最適化の基本原理}{10}{}%
+\contentsline {section}{\numberline {3.1}概要}{10}{}%
+\contentsline {section}{\numberline {3.2}最適化問題の基礎}{11}{}%
+\contentsline {section}{\numberline {3.3}粒子群最適化 (PSO)}{11}{}%
+\contentsline {section}{\numberline {3.4}早熟収束とリスタート戦略}{14}{}%
+\contentsline {chapter}{\numberline {第4章}経路制御における既存研究と課題}{15}{}%
+\contentsline {section}{\numberline {4.1}厳密解法とその限界}{15}{}%
+\contentsline {section}{\numberline {4.2}他のメタヒューリスティクスによるアプローチ}{16}{}%
+\contentsline {section}{\numberline {4.3}PSOを用いた経路制御手法}{16}{}%
+\contentsline {section}{\numberline {4.4}本研究の位置付け}{17}{}%
+\contentsline {chapter}{\numberline {第5章}提案手法}{18}{}%
+\contentsline {section}{\numberline {5.1}概要}{18}{}%
+\contentsline {section}{\numberline {5.2}優先度ベースエンコーディング}{19}{}%
+\contentsline {section}{\numberline {5.3}適応度関数と動的ペナルティ}{20}{}%
+\contentsline {section}{\numberline {5.4}空間的lBestトポロジーとリスタート戦略}{21}{}%
+\contentsline {section}{\numberline {5.5}並列化実装}{21}{}%
+\contentsline {section}{\numberline {5.6}アルゴリズム全体の手順}{22}{}%
+\contentsline {paragraph}{初期化 (Lines 1-2)}{23}{}%
+\contentsline {paragraph}{並列評価フェーズ (Lines 4-10)}{24}{}%
+\contentsline {paragraph}{最良解の更新と停滞検知 (Lines 11-17)}{24}{}%
+\contentsline {paragraph}{リスタート戦略 (Lines 18-22)}{24}{}%
+\contentsline {paragraph}{粒子の移動 (Lines 23-24)}{24}{}%
+\contentsline {chapter}{\numberline {第6章}評価実験}{26}{}%
+\contentsline {section}{\numberline {6.1}概要}{26}{}%
+\contentsline {section}{\numberline {6.2}実験環境とパラメータ設定}{26}{}%
+\contentsline {section}{\numberline {6.3}並列化による計算時間短縮効果}{28}{}%
+\contentsline {section}{\numberline {6.4}解の探索性能と精度の評価}{30}{}%
+\contentsline {section}{\numberline {6.5}厳しい制約条件下でのロバスト性}{33}{}%
+\contentsline {section}{\numberline {6.6}考察}{34}{}%
+\contentsline {chapter}{\numberline {第7章}結論}{35}{}%
+\contentsline {chapter}{参考文献}{39}{}%

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="350" viewBox="0 0 1100 350" style="background-color:#FFFFFF; font-family:'Yu Gothic', 'Meiryo', sans-serif;">
+<defs>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#2C3E50" /></marker>
+</defs>
+<text x="90" y="175.0" font-size="18" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">世代</text>
+<text x="90" y="205.0" font-size="22" font-weight="bold" font-style="italic" fill="#7F8C8D" text-anchor="middle" dominant-baseline="middle">j - 1</text>
+<line x1="130" y1="205.0" x2="170" y2="205.0" stroke="#7F8C8D" stroke-width="4" marker-end="url(#arrow)"  />
+<line x1="890" y1="205.0" x2="940" y2="205.0" stroke="#2C3E50" stroke-width="4" marker-end="url(#arrow)"  />
+<text x="980" y="175.0" font-size="18" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">世代</text>
+<text x="980" y="205.0" font-size="22" font-weight="bold" font-style="italic" fill="#7F8C8D" text-anchor="middle" dominant-baseline="middle">j + 1</text>
+<text x="530.0" y="50" font-size="20" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">世代 j における粒子群の情報</text>
+<rect x="180" y="80" width="700" height="50" fill="#3498DB" stroke="none" stroke-width="0" />
+<text x="220.0" y="105.0" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">粒子ID</text>
+<text x="330.0" y="105.0" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">位置 (Position)</text>
+<text x="470.0" y="105.0" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">速度 (Velocity)</text>
+<text x="610.0" y="105.0" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">評価値 (Fitness)</text>
+<text x="730.0" y="105.0" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">pBest</text>
+<text x="830.0" y="105.0" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">gBest</text>
+<rect x="180" y="130" width="700" height="50" fill="#FFFFFF" stroke="none" stroke-width="0" />
+<line x1="180" y1="180" x2="880" y2="180" stroke="#BDC3C7" stroke-width="1"   />
+<text x="220.0" y="155.0" font-size="18" font-weight="bold" font-style="normal" fill="#3498DB" text-anchor="middle" dominant-baseline="middle">1</text>
+<text x="330.0" y="155.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">x<tspan baseline-shift="sub" font-size="70%">j,1</tspan></text>
+<text x="470.0" y="155.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">v<tspan baseline-shift="sub" font-size="70%">j,1</tspan></text>
+<text x="610.0" y="155.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">f(x<tspan baseline-shift="sub" font-size="70%">j,1</tspan>)</text>
+<text x="730.0" y="155.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">pBest1</text>
+<text x="830.0" y="155.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">gBest</text>
+<rect x="180" y="180" width="700" height="50" fill="#F4F6F7" stroke="none" stroke-width="0" />
+<line x1="180" y1="230" x2="880" y2="230" stroke="#BDC3C7" stroke-width="1"   />
+<text x="220.0" y="205.0" font-size="18" font-weight="bold" font-style="normal" fill="#3498DB" text-anchor="middle" dominant-baseline="middle">2</text>
+<text x="330.0" y="205.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">x<tspan baseline-shift="sub" font-size="70%">j,2</tspan></text>
+<text x="470.0" y="205.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">v<tspan baseline-shift="sub" font-size="70%">j,2</tspan></text>
+<text x="610.0" y="205.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">f(x<tspan baseline-shift="sub" font-size="70%">j,2</tspan>)</text>
+<text x="730.0" y="205.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">pBest2</text>
+<text x="830.0" y="205.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">gBest</text>
+<rect x="180" y="230" width="700" height="50" fill="#FFFFFF" stroke="none" stroke-width="0" />
+<line x1="180" y1="280" x2="880" y2="280" stroke="#BDC3C7" stroke-width="1"   />
+<text x="220.0" y="255.0" font-size="18" font-weight="bold" font-style="normal" fill="#3498DB" text-anchor="middle" dominant-baseline="middle">...</text>
+<text x="330.0" y="255.0" font-size="18" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">...</text>
+<text x="470.0" y="255.0" font-size="18" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">...</text>
+<text x="610.0" y="255.0" font-size="18" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">...</text>
+<text x="730.0" y="255.0" font-size="18" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">...</text>
+<text x="830.0" y="255.0" font-size="18" font-weight="bold" font-style="normal" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">...</text>
+<rect x="180" y="280" width="700" height="50" fill="#F4F6F7" stroke="none" stroke-width="0" />
+<line x1="180" y1="330" x2="880" y2="330" stroke="#BDC3C7" stroke-width="1"   />
+<text x="220.0" y="305.0" font-size="18" font-weight="bold" font-style="normal" fill="#3498DB" text-anchor="middle" dominant-baseline="middle">Np</text>
+<text x="330.0" y="305.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">x<tspan baseline-shift="sub" font-size="70%">j,Np</tspan></text>
+<text x="470.0" y="305.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">v<tspan baseline-shift="sub" font-size="70%">j,Np</tspan></text>
+<text x="610.0" y="305.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">f(x<tspan baseline-shift="sub" font-size="70%">j,Np</tspan>)</text>
+<text x="730.0" y="305.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">pBest<tspan baseline-shift="sub" font-size="70%">Np</tspan></text>
+<text x="830.0" y="305.0" font-size="18" font-weight="normal" font-style="italic" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle">gBest</text>
+</svg>

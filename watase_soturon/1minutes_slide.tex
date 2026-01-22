@@ -1,0 +1,126 @@
+%!TeX program = lualatex
+\documentclass[aspectratio=169, 10pt, t]{beamer}
+\usepackage{luatexja}
+\usepackage[no-math]{luatexja-fontspec}
+
+% --- フォント設定 ---
+\setmainjfont[BoldFont=BIZUDPGothic-Bold.ttf, YokoFeatures={JFM=prop}]{BIZUDPGothic-Regular.ttf}
+\setsansjfont[BoldFont=BIZUDPGothic-Bold.ttf, YokoFeatures={JFM=prop}]{BIZUDPGothic-Regular.ttf}
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+
+% --- パッケージ ---
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{shadows, calc}
+
+% --- 色彩設定 ---
+\definecolor{TMUNavy}{RGB}{67, 102, 176}
+\definecolor{AlertRed}{RGB}{204, 0, 0}
+\definecolor{TextBlack}{RGB}{50, 50, 50}
+
+% --- Beamer設定 ---
+\setbeamercolor{structure}{fg=TMUNavy}
+\setbeamercolor{title}{fg=TextBlack}
+\setbeamercolor{frametitle}{fg=white, bg=TextBlack}
+\setbeamercolor{normal text}{fg=TextBlack}
+\setbeamercolor{itemize item}{fg=TextBlack}
+\setbeamercolor{itemize subitem}{fg=TextBlack}
+
+\setbeamertemplate{itemize item}{\scriptsize\raise1.2pt\hbox{\donotcoloroutermaths$\bullet$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+
+% ▼▼▼ 右下のボタンを消す設定 ▼▼▼
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamersize{text margin left=0.5cm, text margin right=0.5cm}
+
+\begin{document}
+
+\begin{frame}[t]
+    % --- ロゴとフッターの配置 (TikZ overlay) ---
+    \begin{tikzpicture}[remember picture, overlay]
+        % ロゴ (右上)
+        \node[anchor=north east, xshift=0cm, yshift=0cm] at (current page.north east) {
+            \includegraphics[height=1.0cm, keepaspectratio]{images/Asakalab_logo.png}
+        };
+        
+        % ▼▼▼ フッター (右寄せに変更) ▼▼▼
+        % anchor=south east (右下基準), current page.south east (ページの右下隅)
+        % xshift=-0.5cm で右端から少し離しています
+        \node[anchor=south east, xshift=-0.5cm, yshift=0.1cm] at (current page.south east) {
+            \tiny \textcolor{TextBlack}{東京都立大学主催2025 年度電子情報システム工学科特別研究発表会，2026 年2 月16 日，東京都立大学日野キャンパス2 号館講義室A}
+        };
+    \end{tikzpicture}
+
+    % --- ヘッダー ---
+    \vspace{-0.7cm}
+    \begin{center}
+        {\large \textcolor{TextBlack}{ボ\hspace{0.1em}ト\hspace{0.01em}ルネックリンク帯域最大化を目的とした\\
+        \vspace{0.05em}多制約最適経路問題における並列化改良型PSO}}
+        
+        \vspace{0.2em}
+        {\footnotesize 22141073 渡瀬 遥己 \quad  指導教員： 朝香 卓也 }
+        \vspace{-0.5cm} 
+    \end{center}
+    
+    % 横線
+    \par\noindent\rule{\linewidth}{0.4pt}
+    \vspace{-0.5cm}
+
+    % --- メインコンテンツ ---
+    \small 
+    \begin{columns}[T, onlytextwidth]
+        
+        % 左カラム
+        \begin{column}{0.53\textwidth}
+            \setlength{\leftmargini}{2.0em} 
+            \vspace{0.2cm}
+            \textcolor{TextBlack}{1.背景・課題}
+            \vspace{-0.1cm}
+            \begin{itemize} \setlength{\labelsep}{0.3em} \setlength{\itemsep}{1pt} \setlength{\parskip}{1pt}
+                \item 背景： 5G/IoT普及に伴い、帯域・遅延等の複数条件を\\ \vspace{0.04cm}同時に満たす通信が必要
+                \item 課題： 多制約最適経路問題は \textbf{\textcolor{AlertRed}{NP困難}} 
+                    \begin{itemize} \setlength{\itemsep}{0pt}
+                        \item 厳密解法は計算爆発、従来PSOは成功率が低い
+                    \end{itemize}
+            \end{itemize}
+
+            \textcolor{TextBlack}{2.粒子群最適化 (PSO： Particle Swarm Optimization)}
+            \vspace{-0.1cm}
+            \begin{itemize} \setlength{\labelsep}{0.3em} \setlength{\itemsep}{1pt} \setlength{\parskip}{1pt}
+                \item 鳥の群れがエサを探す行動を模倣した探索法
+                \item 弱点： 群れ全体が局所解に捕まり、停滞
+            \end{itemize}
+
+            \textcolor{TextBlack}{3.提案：Restart PSO}
+            \vspace{-0.1cm}
+            \begin{itemize} \setlength{\labelsep}{0.3em} \setlength{\itemsep}{1pt} \setlength{\parskip}{1pt}
+                \item リスタート戦略： 探索の停滞時、群れを\textbf{\textcolor{AlertRed}{強制的に再配置}}
+                \item 効果： 局所解から強力に脱出し、新たな良い経路を発見
+            \end{itemize}
+
+            \textcolor{TextBlack}{4.評価結果}
+            \vspace{-0.1cm}
+            \begin{itemize} \setlength{\labelsep}{0.3em} \setlength{\itemsep}{1pt} \setlength{\parskip}{1pt}
+                \item 成功率： 従来PSO 約10\% $\to$ 提案手法 \textbf{\textcolor{AlertRed}{約60\%}}
+            \end{itemize}
+
+        \end{column}
+
+        % 右カラム
+        \begin{column}{0.45\textwidth}
+            \centering
+            % 図1
+            \includegraphics[width=1.0\linewidth, keepaspectratio]{images/MCOP1min.pdf}
+            \vspace{0.1cm} 
+            % 図2
+            \includegraphics[width=1\linewidth, keepaspectratio]{images/fig3_4_restart_strategy_fixed_v66.png}
+        \end{column}
+
+    \end{columns}
+
+\end{frame}
+\end{document}

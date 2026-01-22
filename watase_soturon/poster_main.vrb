@@ -1,0 +1,252 @@
+
+    % ============================================================
+    % ▼▼▼ フッター (TikZ overlayで右下に配置) ▼▼▼
+    % ============================================================
+    \begin{tikzpicture}[remember picture, overlay]
+        % xshiftで右端からの距離、yshiftで下端からの距離を調整
+        \node[anchor=south east, xshift=-1.5cm, yshift=0.8cm] at (current page.south east) {
+            \footnotesize \textcolor{TextBlack}{東京都立大学主催2025 年度電子情報システム工学科特別研究発表会，2026 年2 月16 日，東京都立大学日野キャンパス2 号館講義室A}
+        };
+    \end{tikzpicture}
+    % ============================================================
+
+\vspace*{-1.75cm}
+% ============================================================
+% タイトル
+% ============================================================
+\begin{beamercolorbox}[wd=\paperwidth,sep=0.7cm,center]{title}
+    \usebeamerfont{title}\inserttitle\par
+    \vspace{0.5cm}
+    \usebeamerfont{author}\insertauthor\par
+\end{beamercolorbox}
+
+\vspace{1.0cm}
+
+% ============================================================
+% 1. 研究背景と目的 (ヘッダー帯)
+% ============================================================
+\begin{beamercolorbox}[wd=\textwidth, sep=0.4cm, leftskip=0.5em]{block title}
+    \usebeamerfont{block title}\strut 1. 研究背景と目的
+\end{beamercolorbox}
+\vspace{-2.0cm}
+
+% ============================================================
+% 2カラムレイアウト開始
+% ============================================================
+\begin{columns}[t, onlytextwidth]
+
+    % --------------------------------------------------------
+    % 【左メインカラム】
+    % --------------------------------------------------------
+    \begin{column}{0.49\textwidth}
+
+        % --- 項目1のテキスト部分 ---
+        \begin{tcolorbox}[colback=white, colframe=white, boxrule=0pt, left=0pt, right=0pt, top=5pt, bottom=5pt]
+            \normalsize
+            \textbf{■ 社会的背景}
+            \begin{itemize}
+                \item 5G、IoTの普及によるネットワークトラフィックの増大と多様化
+                \item 自動運転や遠隔医療など、高品質な通信を要するサービスの台頭
+                \item 従来の最短経路のみでは対応困難な、多様なQoS要求の発生
+            \end{itemize}
+            \vspace{0.5em}
+            \textbf{■ 多制約最適経路問題}
+            \begin{itemize}
+                \item ボ\hspace{0.01em}ト\hspace{-0.2em}ルネック帯域最大化および遅延等制約を満たす経路探索
+                \item 本問題は\textcolor{AlertRed}{\textbf{NP困難}}
+                \item {厳密解法 [1]}: 最適性保証の一方、規模・制約数増加による\textbf{計算時間の指数関数的爆発}
+            \end{itemize}
+            \vspace{0.5em}
+            \textbf{■ 従来手法の課題}
+            \begin{itemize}
+                \item {従来のPSO (Particle Swarm Optimization) [2]}: 全粒子での情報共有による、複雑制約下での\textbf{局所解への早期収束}
+            \end{itemize}
+
+            \vspace{0.5em}
+
+            \textbf{■ 本研究の目的}
+            \begin{itemize}
+                \item \textbf{高速化とスケーラビリティ}: 厳密解法が破綻する大規模・多制約環境でも、実用的な計算時間で解を算出
+                \item \textbf{ロバスト\hspace{-0.2em}性の向上}: 従来PSOが陥る局所解停滞を回避し、厳しい制約条件下でも粘り強く解を発見
+                \item \textbf{提案手法}: 上記を両立する\textcolor{AlertRed}{\textbf{「並列化改良型PSO」}}を提案し、その有効性を実証
+            \end{itemize}
+        \end{tcolorbox}
+
+        \vspace{0.3cm}
+
+        % --- 2. 基礎手法 ---
+        \begin{block}{2. 基礎手法: 粒子群最適化 (PSO)}
+            \begin{columns}[T, totalwidth=\linewidth]
+                \begin{column}{0.52\linewidth}
+                    \normalsize
+                    \textbf{■ 概要}
+                    \begin{itemize}
+                        \item 生物の群れ行動を模倣した群知能アルゴリズム
+                        \item 粒子が探索空間を移動し解を探索
+                    \end{itemize}
+                    \vspace{0.5em}
+                    \textbf{■ 更新メカニズム}
+                    \begin{itemize}
+                        \item Personal Best: 自身の過去最良
+                        \item Global Best: 群れ全体の最良
+                        \item これらを頼りに速度$\boldsymbol{v}$と位置$\boldsymbol{x}$を更新
+                    \end{itemize}
+                \end{column}
+                \begin{column}{0.55\linewidth}
+                    \centering
+                    \includegraphics[width=14.5cm, keepaspectratio]{images/big図3-1.pdf}
+                    \\ \small{図2: 粒子の探索挙動}
+                \end{column}
+            \end{columns}
+        \end{block}
+
+        \vspace{0.3cm}
+
+        % --- 4. 評価(A) ---
+        \begin{block}{4. 評価(A): 計算時間のスケーラビリティ}
+            \centering
+            \includegraphics[width=43.3cm, height=20.0cm, keepaspectratio]{images/計算時間比較_3制約3手法_bigger2.png}
+            \\ \small{図4: 制約数3における平均計算時間の推移}
+
+            \vspace{0.5cm}
+
+            \begin{columns}[T, totalwidth=\linewidth]
+                \begin{column}{1.0\linewidth}
+                    \normalsize
+                    \textbf{■ 実験設定}
+                    \begin{itemize}
+                        \item ランダムグラフ（ノード数 100〜4000）
+                        \item 制約数3（遅延・ロス・信頼性）/ 制約数1（遅延）
+                    \end{itemize}
+                    \vspace{0.3em}
+                    \textbf{■ 結果と考察}
+                    \begin{itemize}
+                        \item {厳密解法[1]}: 制約数増加に伴う、\textbf{計算時間の指数関数的増大}
+                        \item {提案手法}: 3制約下でノード数増加につれて、\textbf{厳密解法より高速}
+                        \item 並列化: 4並列化により、2.91倍高速化成功（理論値: 3.07倍）
+                    \end{itemize}
+                \end{column}
+            \end{columns}
+        \end{block}
+
+    \end{column}
+
+
+    % --------------------------------------------------------
+    % 【右メインカラム】
+    % --------------------------------------------------------
+    \begin{column}{0.49\textwidth}
+
+        % --- 項目1の図部分 ---
+        \begin{tcolorbox}[colback=white, colframe=white, boxrule=0pt, left=0pt, right=0pt, top=5pt, bottom=5pt]
+            \centering
+            \includegraphics[width=33.4cm, keepaspectratio]{images/図2-6.pdf}
+            \\ \small{図1: 多制約最適経路問題の例}
+        \end{tcolorbox}
+
+        \vspace{0.3cm}
+
+        % --- 3. 提案手法 ---
+        \begin{block}{3. 提案手法: Restart PSO}
+            \begin{columns}[T, totalwidth=\linewidth]
+                \begin{column}{1.0\linewidth}
+                    \normalsize
+                    \textbf{① lBest(Local Best) ト\hspace{-0.1em}ポロジー}
+                    \begin{itemize}
+                        \item 近傍粒子間のみの情報共有による、群全体の多様性維持
+                    \end{itemize}
+
+                    \textbf{② リスタート\hspace{-0.2em}戦略}
+                    \begin{itemize}
+                        \item 停滞検知時のエリート\hspace{-0.2em}保持と他粒子の強制再配置による局所解脱出
+                    \end{itemize}
+
+                    \textbf{③ マルチコア並列化}
+                    \begin{itemize}
+                        \item マスター・ワーカーモデルによるCPU4コアでの並列化
+                    \end{itemize}
+                \end{column}
+            \end{columns}
+
+            \vspace{0.3cm}
+
+            \centering
+            \includegraphics[width=39.0cm, height=14.1cm, keepaspectratio]{images/fig3_4_restart_strategy_fixed.pdf}
+            \\ \small{図3: リスタート\hspace{-0.2em}戦略による局所解脱出の概念図}
+        \end{block}
+
+        \vspace{0.3cm}
+
+        % --- 5. 評価(B) ---
+        \begin{block}{5. 評価(B): 厳しい制約下でのロバスト\hspace{-0.2em}性}
+            \centering
+            \includegraphics[width=43.3cm, height=20.0cm, keepaspectratio]{images/feasibility_fontsize_bigger.png}
+            \\ \small{図5: 制約の厳しさと成功率の関係}
+
+            \vspace{0.5cm}
+
+            \begin{columns}[T, totalwidth=\linewidth]
+                \begin{column}{1.0\linewidth}
+                    \normalsize
+                    \textbf{■ 実験設定}
+                    \begin{itemize}
+                        \item 遅延制約条件の厳しさを変えて複数の制約下での成功率評価
+                    \end{itemize}
+                    \vspace{0.3em}
+                    \textbf{■ 結果と考察}
+                    \begin{itemize}
+                        \item {Global PSO (従来手法)}: 初期探索での局所解収束による、\textbf{約10\%程度の低成功率}
+                        \item {提案手法}: lBestとリスタート\hspace{-0.2em}による、\textbf{約60\%の高い成功率維持}
+                        \item 従来手法が失敗する高難易度条件下における、\textbf{高いロバスト\hspace{-0.2em}性の実証}
+                    \end{itemize}
+                \end{column}
+            \end{columns}
+        \end{block}
+
+    \end{column}
+\end{columns}
+
+% ============================================================
+% 全幅フッター (一段組)
+% ============================================================
+\vspace{0.5cm}
+
+% --- 6. 今後の予定 ---
+\begin{block}{6. 今後の予定}
+    \begin{columns}[T, onlytextwidth]
+        % --- 1つ目 ---
+        \begin{column}{0.32\linewidth}
+            \begin{itemize}
+                \item 多様なネット\hspace{-0.2em}ワークト\hspace{-0.2em}ポロジーでの評価
+                \item ノード数増加やBAグラフなどでの評価
+            \end{itemize}
+        \end{column}
+
+        % --- 2つ目 ---
+        \begin{column}{0.32\linewidth}
+            \begin{itemize}
+                \item 動的ト\hspace{-0.2em}ポロジーへの対応
+                \item リンク切断やト\hspace{-0.2em}ラフィック変動への対応
+            \end{itemize}
+        \end{column}
+
+        % --- 3つ目 ---
+        \begin{column}{0.32\linewidth}
+            \begin{itemize}
+                \item パラメータの自動チューニング
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{block}
+
+\vspace{0.5cm}
+
+% --- 参考文献 ---
+\hrule
+\vspace{0.5em}
+{\tiny
+\textbf{参考文献:}
+[1] F. Guerriero et al., "Label correcting methods to solve multicriteria shortest path problems," \textit{JOTA}, vol. 111, no. 3, 2001. \quad
+[2] Y. Norimatsu and T. Asaka, "Solving maximum bottleneck link problem with PSO," in \textit{Proc. APCC}, 2024.
+}
+

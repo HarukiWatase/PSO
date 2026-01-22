@@ -1,0 +1,156 @@
+本章では，本研究で取り扱う多制約最適経路問題（MCOP）およびボトルネックリンク問題（MBL）を数学的に定義する．
+ここで定義するグラフ理論の記法や目的関数，制約条件は，第5章で提案するアルゴリズムの設計，および第6章における評価指標の基礎となるものである．
+まずグラフの基礎定義を行い，続いて本研究が対象とする具体的な経路探索問題の定式化について述べる．
+
+\section{グラフ理論の基礎定義}
+通信ネットワークのトポロジーを数理モデルとして扱うために，Bondyらによる定義に基づき，本論文で使用するグラフ理論の用語を定義する\cite{bondy1976}．
+
+ネットワークは，ノード（頂点）の集合 $V$ とリンク（辺）の集合 $E$ からなるグラフ $G = (V, E)$ として表現される．
+ここで，リンク $e \in E$ は順序対 $(u, v)$ で表され，$u$ を始点，$v$ を終点とする．
+各リンク $e$ には，そのリンクの物理的な特性を表す非負の重み関数 $w: E \rightarrow \mathbb{R}^+$ が関連付けられる．
+本研究においては，重みとして帯域幅 $b(e)$ や遅延 $d(e)$ などを扱う．
+
+グラフ $G$ 上のノードの列 $v_0, v_1, \dots, v_k$ において，隣接するノード間にリンク $e_i = (v_{i-1}, v_i) \in E$ が存在するとき，これを $(v_0, v_k)$-ウォークと呼ぶ．
+グラフ理論において，経路を表す概念は以下の3つに区別される．
+
+\begin{enumerate}
+    \item ウォーク: ノードとリンクの重複を許す列である．図\ref{fig:walk}に示すように，同じノードやリンクを何度も通ることが可能である．
+    \item トレイル: 全てのリンクが互いに異なるウォークである．図\ref{fig:trail}に示すように，リンクの重複は許されないが，ノードの再訪問は許容される．
+    \item パス: 全てのノードが互いに異なるウォークである．図\ref{fig:path}に示すように，ノードおよびリンクの重複は許されない\cite{bondy1976}．
+\end{enumerate}
+
+ネットワークルーティングにおいて求められるのは，データのループを防ぐため，一般にパスである．
+
+%--- 図2.1と図2.2を横並びに配置 ---
+\begin{figure}[htbp]
+  \centering
+  % 左側：図2.1 (Python生成図)
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/図2-1.pdf}
+    \caption{グラフの例}
+    \label{fig:sample_graph}
+  \end{minipage}
+  \hfill
+  % 右側：図2.2 (Python生成図)
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/図2-2.pdf}
+    \caption{グラフ上のウォークの例}
+    \label{fig:walk}
+  \end{minipage}
+\end{figure}
+
+%--- 図2.3と図2.4を横並びに配置 ---
+\begin{figure}[htbp]
+  \centering
+  % 左側：図2.3 (Python生成図)
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/図2-3.pdf}
+    \caption{グラフ上のトレイルの例}
+    \label{fig:trail}
+  \end{minipage}
+  \hfill
+  % 右側：図2.4 (Python生成図)
+  \begin{minipage}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/図2-4.pdf}
+    \caption{グラフ上のパスの例}
+    \label{fig:path}
+  \end{minipage}
+\end{figure}
+
+\section{最短経路問題}
+最短経路問題 (Shortest Path Problem: SPP) は，始点 $s$ から終点 $d$ までのパスの中で，リンクの重みの総和を最小化する問題である．
+パス $P$ の総コスト $C(P)$ は以下のように定義される．
+
+\begin{equation}
+ C(P) = \sum_{e \in P} w(e)
+\end{equation}
+
+SPPの目的関数は以下のように定式化される．
+
+\begin{equation}
+ \text{Minimize } \sum_{e \in P} w(e)
+\end{equation}
+
+ここで，重み $w(e)$ が物理的な距離や遅延を表す場合，この問題は遅延最小化問題となる．
+SPPは，リンク重みが非負であれば，Dijkstra法\cite{dijkstra1959} により計算量 $O(|E| + |V| \log |V|)$ で効率的に解けることが知られており，組合せ最適化問題における最も基本的な問題の一つとして位置付けられている\cite{Korte2012}．
+
+\section{最大ボトルネックリンク問題}
+最大ボトルネックリンク問題 (Maximum Bottleneck Link Problem: MBL) は，パス上のリンクの中で，最小の帯域幅（ボトルネック）を持つリンクの値を最大化する問題である\cite{pollack1960}．
+これは，通信ネットワークにおいて可能な限り太いパスを通してスループットを最大化したい場合に適用される．
+
+図\ref{fig:mbl_example}にパスにおけるボトルネックリンクの概念を示す．
+この例では，始点 {start} から終点 {goal} への赤色で示されたパスが選択されている．
+パス上のリンク帯域幅はそれぞれ {200Mbps, 100Mbps, 150Mbps} である．
+この場合，パス全体の通信速度を律速するのは最小値である 100Mbps のリンクとなり，これがボトルネックリンクとなる．
+
+パス $P$ のボトルネック容量 $B(P)$ は以下のように定義される（凹型メトリック）．
+
+\begin{equation}
+ B(P) = \min_{e \in P} b(e)
+\end{equation}
+
+ここで $b(e)$ はリンク $e$ の帯域幅を表す．
+MBL問題の目的関数は，始点 $s$ から終点 $d$ までの全ての可能なパスの集合 $\mathcal{P}_{sd}$ の中から，以下を満たすパス $P^*$ を見つけることである．
+
+\begin{equation}
+ P^* = \mathop{\text{arg~max}}_{P \in \mathcal{P}_{sd}} \left( \min_{e \in P} b(e) \right)
+\end{equation}
+
+この問題は，Dijkstra法の緩和条件を和の最小化から最小値の最大化に変更することで，SPPと同様に多項式時間で解くことが可能である．
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/図2-5.pdf}
+  \caption{パスにおけるボトルネックリンクの概念図}
+  \label{fig:mbl_example}
+\end{figure}
+
+\section{多制約最適経路問題 (MCOP)}
+前節で述べたMBL問題は，単に帯域幅のみを最大化することを目的としていた．
+しかし，第1章で述べたメタバースやVRのような次世代アプリケーションにおいては，大容量通信（帯域幅）の確保と同時に，遅延，ジッタ，パケット損失率といった複数のQoS (Quality of Service) 要件を満たすことが不可欠である．
+
+このように複数の異なる制約条件を同時に満たす経路を探索する問題は，多制約最適経路問題 (Multi-Constrained Optimal Path Problem: MCOP) と呼ばれる．
+本研究におけるMCOPは，一般に以下のように定式化される．
+
+\begin{align}
+ \text{Maximize} \quad & B(P) = \min_{e \in P} b(e) \\
+ \text{Subject to} \quad & W_k(P) = \sum_{e \in P} w_k(e) \le C_k \quad (k = 1, 2, \dots, K)
+\end{align}
+
+ここで，$K$ は制約条件の数を表す．$w_k(e)$ はリンク $e$ における $k$ 番目のメトリック（例：遅延，ロス率，ネットワーク信頼度など）であり，$C_k$ はその制約上限値である．
+本研究のシミュレーションにおいては複数の制約条件を扱うが，本節では問題の構造を視覚的に理解しやすくするため，代表的な加法的メトリックである「遅延」を単一の制約条件とした場合を例に挙げて説明する．
+
+図\ref{fig:mcop_example}に，ボトルネック帯域幅最大化と遅延制約 ($D_{\max}=20\text{ms}$) を考慮した具体例を示す．
+\begin{itemize}
+    \item 経路A（赤色）: ボトルネック帯域は 100Mbps と高いが，合計遅延が $30\text{ms}$ となり，制約条件を満たさない（制約違反）．
+    \item 経路B（青色）: ボトルネック帯域は 80Mbps と経路Aより低いが，合計遅延は $15\text{ms}$ であり，制約条件を満たしている（実行可能解）．
+\end{itemize}
+
+このトレードオフと探索の難しさを概念的に示したのが図\ref{fig:mcop_concept}である．
+横軸は遅延（制約条件），縦軸は帯域幅（目的関数）を表している．
+単純に帯域幅のみを最大化しようとすると，図中の経路Aのように制約違反領域（右側の領域）にある解を選択してしまうリスクがある．
+MCOPの目的は，制約ラインよりも左側の実行可能領域の中に存在する解の中で，最も帯域幅が高い経路B（最適解）を見つけ出すことである．
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/図2-6.pdf}
+  \caption{多制約最適経路問題の具体例（ボトルネック最大化と遅延制約）}
+  \label{fig:mcop_example}
+\end{figure}
+
+WangとCrowcroftは，凹型メトリックの帯域幅と加法的メトリックである遅延のような異なる性質のメトリックを同時に扱う問題の計算複雑性を解析した\cite{wang1996}．
+彼らの研究によれば，帯域幅のみあるいは遅延のみの最適化は多項式時間で可能であるが，それらを組み合わせた多制約問題は，一般にNP困難 (NP-Hard) であることが証明されている\cite{garey1979}．
+
+厳密解法としては，全てのパレート最適解を探索する方法があるが，大規模なネットワークにおいては計算時間が爆発的に増大するため，リアルタイム制御には適さない．
+したがって，本研究ではPSOなどのメタヒューリスティクスを用いた近似解法のアプローチを採用する．
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/図2-7.pdf}
+  \caption{多制約最適経路問題における解の探索空間とトレードオフ}
+  \label{fig:mcop_concept}
+\end{figure}

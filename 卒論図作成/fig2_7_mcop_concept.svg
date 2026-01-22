@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500" style="background-color:#FFFFFF; font-family:'Noto Sans CJK JP', 'Yu Gothic', 'Meiryo', sans-serif;">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2D3436" /></marker>
+<marker id="axis_arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="{colors["line_axis"]}" /></marker>
+<filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceAlpha" stdDeviation="2"/><feOffset dx="1" dy="1" result="offsetblur"/><feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="80" y="50" width="342.0" height="390" fill="#E0F7FA" opacity="0.6" />
+<rect x="422.0" y="50" width="228.0" height="390" fill="#FFEBEE" opacity="0.6" />
+<text x="251.0" y="420" font-size="20" font-weight="bold" fill="#0984E3" text-anchor="middle">実行可能領域</text>
+<text x="536.0" y="420" font-size="20" font-weight="bold" fill="#D63031" text-anchor="middle">制約違反領域</text>
+<line x1="80" y1="440" x2="650" y2="440" stroke="#2D3436" stroke-width="2" marker-end="url(#arrow)" />
+<text x="650" y="480" font-size="16" font-weight="bold" text-anchor="end" fill="#2D3436">遅延 (Delay) → 大</text>
+<line x1="80" y1="440" x2="80" y2="50" stroke="#2D3436" stroke-width="2" marker-end="url(#axis_arrow)" />
+<text x="80" y="20" font-size="18" font-weight="bold" text-anchor="start" fill="#2D3436">帯域幅 (Bandwidth)</text>
+<text x="80" y="40" font-size="16" text-anchor="start" fill="#2D3436">↑ 大</text>
+<line x1="422.0" y1="50" x2="422.0" y2="440" stroke="#D63031" stroke-width="2" stroke-dasharray="6,4" />
+<text x="422.0" y="40" font-size="18" font-weight="bold" fill="#D63031" text-anchor="middle">遅延制約 D<tspan baseline-shift="sub" font-size="smaller">max</tspan></text>
+<circle cx="194.0" cy="323.0" r="6" fill="#B2BEC3" stroke="none" stroke-width="0" filter="url(#softShadow)" />
+<text x="194.0" y="308.0" font-size="14" font-weight="normal" fill="#2D3436" text-anchor="middle" style="text-shadow: 1px 1px 0 #FFF;">解C</text>
+<circle cx="279.5" cy="264.5" r="6" fill="#B2BEC3" stroke="none" stroke-width="0" filter="url(#softShadow)" />
+<circle cx="336.5" cy="362.0" r="6" fill="#B2BEC3" stroke="none" stroke-width="0" filter="url(#softShadow)" />
+<circle cx="393.5" cy="147.5" r="13" fill="none" stroke="#0984E3" stroke-width="1.5" opacity="0.6" />
+<circle cx="393.5" cy="147.5" r="9" fill="#0984E3" stroke="#FFFFFF" stroke-width="2" filter="url(#softShadow)" />
+<text x="393.5" y="125.5" font-size="14" font-weight="bold" fill="#2D3436" text-anchor="middle" style="text-shadow: 1px 1px 0 #FFF;">解B (最適解)</text>
+<circle cx="507.5" cy="108.5" r="6" fill="#D63031" stroke="none" stroke-width="0" filter="url(#softShadow)" />
+<text x="507.5" y="93.5" font-size="14" font-weight="normal" fill="#2D3436" text-anchor="middle" style="text-shadow: 1px 1px 0 #FFF;">解A (帯域最大だが違反)</text>
+<circle cx="536.0" cy="245.0" r="6" fill="#D63031" stroke="none" stroke-width="0" filter="url(#softShadow)" />
+<circle cx="593.0" cy="323.0" r="6" fill="#D63031" stroke="none" stroke-width="0" filter="url(#softShadow)" />
+<path d="M 313.5 127.5 Q 346.0 125.0 378.5 142.5" stroke="#636E72" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+<text x="263.5" y="117.5" font-size="15" fill="#2D3436" text-anchor="end">制約を満たす中で<tspan x="263.5" dy="1.4em" font-weight="bold" fill="#0984E3">最も帯域が高い点</tspan></text>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 600 350" style="background-color:#FFFFFF; font-family:'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2D3436" /></marker>
+<marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0984E3" /></marker>
+<marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#D63031" /></marker>
+<marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#E17055" /></marker>
+</defs>
+<path d="M 60 175 Q 300 50 540 175" stroke="#B2BEC3" stroke-width="2" fill="none" stroke-dasharray="5,3" />
+<text x="300" y="30" font-size="14" font-weight="bold" fill="#636E72" text-anchor="middle">経路A: 最短経路 (SPP)</text>
+<text x="300" y="50" font-size="11" fill="#636E72" text-anchor="middle">ホップ数・遅延は最小だが...</text>
+<circle cx="300" cy="112" r="20" stroke="#D63031" stroke-width="2" fill="#FFFFFF" />
+<text x="300" y="112" dy="4" font-size="10" fill="#D63031" font-weight="bold" text-anchor="middle">5Mbps</text>
+<text x="300" y="142" font-size="11" fill="#D63031" font-weight="bold" text-anchor="middle">ボトルネック!</text>
+<path d="M 60 175 C 200 320, 400 320, 540 175" stroke="#0984E3" stroke-width="10" fill="none" />
+<text x="300" y="310" font-size="14" font-weight="bold" fill="#0984E3" text-anchor="middle">経路B: ボトルネック最大化 (MBL)</text>
+<text x="300" y="330" font-size="11" fill="#0984E3" text-anchor="middle">距離は伸びるが、太い回線を維持</text>
+<rect x="260" y="245" width="80" height="20" rx="5" fill="#0984E3" />
+<text x="300" y="259" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">20 Mbps</text>
+<circle cx="60" cy="175" r="22" fill="#FFFFFF" stroke="#2D3436" stroke-width="2" />
+<text x="60" y="176" font-size="16" font-weight="bold" text-anchor="middle" dominant-baseline="middle">S</text>
+<circle cx="540" cy="175" r="22" fill="#FFFFFF" stroke="#2D3436" stroke-width="2" />
+<text x="540" y="176" font-size="16" font-weight="bold" text-anchor="middle" dominant-baseline="middle">D</text>
+</svg>

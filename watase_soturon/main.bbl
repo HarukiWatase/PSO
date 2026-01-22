@@ -1,0 +1,171 @@
+\begin{thebibliography}{10}
+
+\bibitem{ericsson2024}
+ Ericsson,
+``{Ericsson Mobility Report November 2024},''
+\url{https://www.ericsson.com/en/reports-and-papers/mobility-report}, 2024.
+
+\bibitem{sandvine2024}
+ Sandvine,
+``{The Global Internet Phenomena Report 2024},''
+\url{https://www.sandvine.com/phenomena}, 2024.
+
+\bibitem{Yaqoob2020}
+A. Yaqoob, T. Bi, and G. Muntean,
+``A survey on adaptive 360° video streaming: Solutions, challenges and opportunities,''
+IEEE Communications Surveys and Tutorials,
+vol.22, no.4, pp.2801--2838, 2020.
+
+\bibitem{Hovan2021}
+A.S. Hovan, F. Maschio, G.A. Shaji, T. Baskar, and P. Digvijay,
+``Metaverse: The next stage of human culture and the internet,''
+International Journal of Advanced Research Trends in Engineering and Technology (IJARTET),
+vol.8, no.12, pp.1--10, 2021.
+
+\bibitem{iowngf2024}
+ {IOWN Global Forum},
+``{Ultra Wideband Optical Transmission White Paper},''
+\url{https://iowngf.org/white-papers/}, 2025.
+
+\bibitem{Nurhaida2019}
+I. Nurhaida, D. Ramayanti, and I.N. Islamiyah,
+``Performance comparison based on open shortest path first (ospf) routing algorithm for ip internet networks,''
+Communications on Applied Electronics,
+vol.7, pp.12--25, Sept.\ 2019.
+
+\bibitem{garey1979}
+M.R. Garey and D.S. Johnson,
+Computers and Intractability: A Guide to the Theory of NP-Completeness,
+W. H. Freeman and Company, 1979.
+
+\bibitem{guerriero2001}
+F. Guerriero and R. Musmanno,
+``Label correcting methods to solve multicriteria shortest path problems,''
+Journal of Optimization Theory and Applications,
+pp.589--613, 2001.
+
+\bibitem{kennedy1995}
+J. Kennedy and R. Eberhart,
+``Particle swarm optimization,''
+Proceedings of ICNN'95 - International Conference on Neural Networks,
+vol.4,
+pp.1942--1948, 1995.
+
+\bibitem{norimatsu2024}
+Y. Norimatsu and T. Asaka,
+``Solving maximum bottleneck link problem with particle swarm optimization,''
+Proceedings of the 29th Asia-Pacific Conference on Communications (APCC),
+vol.111, no.3, pp.589--613, 2024.
+
+\bibitem{bondy1976}
+J.A. Bondy and U.S.R. Murty,
+Graph Theory with Applications,
+Elsevier Science Ltd.,
+New York, 1976.
+
+\bibitem{dijkstra1959}
+E.W. Dijkstra,
+``A note on two problems in connexion with graphs,''
+Numer.\ Math.,
+vol.1, no.1, pp.269--271, Dec.\ 1959.
+
+\bibitem{Korte2012}
+B. Korte and J. Vygen,
+Combinatorial Optimization: Theory and Algorithms,
+5th edition,
+Springer Publishing Company, Incorporated, 2012.
+
+\bibitem{pollack1960}
+M. Pollack,
+``The maximum capacity through a network,''
+Operations Research,
+vol.8, no.5, pp.733--736, 1960.
+
+\bibitem{wang1996}
+Z. Wang and J. Crowcroft,
+``Quality-of-service routing for supporting multimedia applications,''
+IEEE Journal on Selected Areas in Communications,
+vol.14, no.7, pp.1228--1234, 1996.
+
+\bibitem{aiyoshi2002}
+相吉英太郎，安田恵一郎，
+メタヒューリスティクスと応用，
+電気学会，2002．
+
+\bibitem{iba2011}
+伊庭斉志，
+進化論的計算手法，
+オーム社，2011．
+
+\bibitem{Shi1998}
+Y. Shi and R. Eberhart,
+``A modified particle swarm optimizer,''
+Proceedings of the 1998 IEEE International Conference on Evolutionary Computation,
+pp.69--73, 1998.
+
+\bibitem{Kennedy1999}
+J. Kennedy,
+``Small worlds and mega-minds: effects of neighborhood topology on particle swarm performance,''
+Proceedings of the 1999 Congress on Evolutionary Computation,
+vol.3, pp.1931--1938, 1999.
+
+\bibitem{iba2013}
+伊庭斉志，
+深層学習と進化計算，
+オーム社，2013．
+
+\bibitem{van2004}
+P.V. Mieghem and F.A. Kuipers,
+``Concepts of exact qos routing algorithms,''
+IEEE/ACM Transactions on Networking,
+vol.12, no.5, pp.851--864, 2004.
+
+\bibitem{Wei2019}
+K. Wei, Y. Gao, W. Zhang, and S. Lin,
+``A modified dijkstra's algorithm for solving the problem of finding the maximum load path,''
+2019 IEEE 2nd International Conference on Information and Computer Technologies (ICICT),
+pp.10--13, 2019.
+
+\bibitem{Malpani2002}
+N. Malpani and J. Chen,
+``A note on practical construction of maximum bandwidth paths,''
+Information Processing Letters,
+vol.83, no.3, pp.175--180, 2002.
+
+\bibitem{Moshref2021}
+M. Moshref, R. Al-Sayyed, and S. Al-Sharaeh,
+``An enhanced multi-objective non-dominated sorting genetic routing algorithm for improving the qos in wireless sensor networks,''
+IEEE Access,
+vol.9, pp.149176--149191, 2021.
+
+\bibitem{Nair2014}
+T.R.G. Nair, K. Sooda, and R. Selvarani,
+``A qos-based routing approach using genetic algorithms for bandwidth maximisation in networks,''
+International Journal of Artificial Intelligence and Soft Computing,
+vol.4, no.1, pp.80--94, 2014.
+
+\bibitem{Supiyandi2024}
+S. Supiyandi and M. Hasanuddin,
+``Optimization of computer network performance using heuristic algorithms,''
+Journal of Computer Science, Artificial Intelligence, and Communication (JOCSAIC),
+vol.1, no.1, pp.1--10, 2024.
+
+\bibitem{Patel2014}
+M.K. Patel, M.R. Kabat, and C.R. Tripathy,
+``A hybrid aco/pso based algorithm for qos multicast routing problem,''
+Ain Shams Engineering Journal,
+vol.5, no.1, pp.113--120, 2014.
+
+\bibitem{Mohemmed2008}
+A.W. Mohemmed, N.C. Sahoo, and T.K. Geok,
+``Solving shortest path problem using particle swarm optimization,''
+Applied Soft Computing,
+vol.8, no.4, pp.1643--1653, 2008.
+
+\bibitem{honjo2013}
+本庄将也，飯塚博幸，山本雅人，古川正志，
+``巡回セールスマ ン問題に対する粒子群最適化の提案と性能評価”,''
+日本知能情報ファジィ学会誌，
+vol.28，no.4，pp.744--755，2016．
+
+\end{thebibliography}

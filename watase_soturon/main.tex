@@ -1,0 +1,78 @@
+%\documentclass[a4j]{article}
+%\documentclass{soturonUTF8}
+\documentclass[bachelor]{soturon}
+% パッケージの読み込み
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{amsmath} % 数式用パッケージ
+\usepackage{amssymb} % 数学記号用パッケージ 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[section]{placeins}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+ \title{Restart PSO：ボトルネックリンク最大化を目的とした多制約最適経路問題のための改良型粒子群最適化}
+ %\title{高解像度全天球映像とローカル5Gを用いたパーソナル遠隔映像監視システム}
+\author{渡瀬遥己}
+\eauthor{Haruki Watase}
+\studentid{22141073}
+\supervisor{朝香卓也}
+\handin{2026}{2}
+\setcounter{tocdepth}{2}
+
+%\begin{abstract}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%タイトル%%%%%%%%%%%%%%%%%%%%
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%前文%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+%%%%%%%%%%%%% 目次 %%%%%%%%%%%%%%
+\tableofcontents                    %目次
+
+\mainmatter%ここから本文
+
+%%%%%%%%%%%%%%%%%%%%%% 001 序論 %%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{序論\label{intro}}
+\input{Chapter/001.tex}
+
+%%%%%%%%%%%%%%%%%%%%%% 002 関連研究と現状 %%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{ネットワークグラフ問題\label{netoworkgraph}}
+\input{Chapter/002.tex}
+
+%%%%%%%%%%%%%%%%%%%%%% 003 監視カメラシステム %%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{粒子群最適化の基本原理\label{metaheuristics}}
+\input{Chapter/003.tex}
+
+%%%%%%%%%%%%%%%%%%%%%% 004 通信品質評価実験 %%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{経路制御における既存研究と課題\label{relate}}
+\input{Chapter/004.tex}
+
+%%%%%%%%%%%%%%%%%%%%%% 005 主観評価実験 %%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{提案手法\label{proposedmethod}}
+\input{Chapter/005.tex}
+
+\chapter{評価実験\label{simulation}}
+\input{Chapter/006.tex}
+
+%%%%%%%%%%%%%%%%%%%%%% 006 結論 %%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{結論\label{conclusion}}
+\input{Chapter/007.tex}
+
+\chapter*{謝辞}
+本論文の執筆にあたり, 日頃よりご指導いただきました朝香卓也教授に深く感謝します.
+
+\backmatter                         %ここから後付
+
+%%%%%%%%%% If using BibTeX:
+\bibliography{ref}
+\bibliographystyle{sieicej}
+
+\appendix
+
+
+\end{document}
