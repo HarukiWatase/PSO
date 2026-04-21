@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from pathlib import Path
 import numpy as np
 import matplotlib.patches as patches
 import japanize_matplotlib
@@ -136,7 +137,9 @@ ax2.scatter(rx, ry, c='skyblue', s=500, marker='o', alpha=0.9, edgecolors='blue'
 ax2.text(11.8, 8.5, "② 再初期化", ha='center', va='bottom', fontsize=23, color='navy', fontweight='bold')
 
 plt.tight_layout()
-plt.savefig('fig1_final_v11_bottom.svg', format='svg', bbox_inches='tight', pad_inches=0.1)
-plt.savefig('fig1_final_v11_bottom.png', dpi=300, bbox_inches='tight', pad_inches=0.1)
-print("保存完了: fig1_final_v11_bottom.png")
+output_dir = Path("assets/figures/root")
+output_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_dir / "svg/fig1_final_v11_bottom.svg", format='svg', bbox_inches='tight', pad_inches=0.1)
+plt.savefig(output_dir / "png/fig1_final_v11_bottom.png", dpi=300, bbox_inches='tight', pad_inches=0.1)
+print("保存完了: assets/figures/root/png/fig1_final_v11_bottom.png")
 plt.show()
