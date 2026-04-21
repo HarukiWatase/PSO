@@ -114,6 +114,22 @@ vol.3, pp.1931--1938, 1999.
 深層学習と進化計算，
 オーム社，2013．
 
+\bibitem{Akyildiz2015}
+I.F. Akyildiz, P. Wang, and S.-C. Lin,
+``Softair: A software defined networking architecture for 5g wireless systems,''
+IEEE Network,
+vol.29, no.4, pp.16--21, 2015.
+
+\bibitem{RFC4655}
+A. Farrel, J.-P. Vasseur, and J. Ash,
+``A path computation element (pce)-based architecture,''
+RFC 4655, 2006. https://www.rfc-editor.org/info/rfc4655
+
+\bibitem{RFC8402}
+C. Filsfils, S. Previdi, L. Ginsberg, I. Chen, S. Litkowski, and R. Shakir,
+``Segment routing architecture,''
+RFC 8402, 2018. https://www.rfc-editor.org/info/rfc8402
+
 \bibitem{van2004}
 P.V. Mieghem and F.A. Kuipers,
 ``Concepts of exact qos routing algorithms,''

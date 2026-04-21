@@ -382,7 +382,7 @@ if __name__ == '__main__':
             
             for t in range(num_trials):
                 # 1. グラフ生成
-                Graph = create_graph.random_graph(num_node=N)
+                Graph = create_graph.random_graph(num_node=N,prob=10/N)
                 if not nx.is_connected(Graph):
                     largest_cc = max(nx.connected_components(Graph), key=len)
                     nodes = list(largest_cc)

@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex main"] 1768999822.30578 "main.aux" "main.bbl" "main" 1768999827.39438 0
-  "./ref.bib" 1768994379.85853 13567 3c147d2f05045902786a4966a4fa62f4 ""
+["bibtex main"] 1771481551.90253 "main.aux" "main.bbl" "main" 1771481555.02551 0
+  "./ref.bib" 1769757245.15014 14516 ba530b2ed8e97a90b871f1cccf91eacd ""
   "./sieicej.bst" 1767852176 40776 7800bda83f5ba6daac2c7311600f8290 ""
-  "main.aux" 1768999825.85826 13550 c872a61496ed8a5d483d7f0fa5b6eafe "latex"
+  "main.aux" 1771481553.923 17290 54fdbd8e155ed9a8b979d3efc7289978 "latex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["dvipdf"] 1768999826.14933 "main.dvi" "main.pdf" "main" 1768999827.39555 0
-  "main.dvi" 1768999825.86045 118292 ac31aaed5e3314366fad3319ff4421bf "latex"
+["dvipdf"] 1771481554.05917 "main.dvi" "main.pdf" "main" 1771481555.02624 0
+  "main.dvi" 1771481553.92439 144964 ef52a4735827176d15c7772277a09c6f "latex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["latex"] 1768999822.4432 "/Users/asaken_n45/Documents/PSO/watase_soturon/main.tex" "main.dvi" "main" 1768999827.39451 0
-  "/Users/asaken_n45/Documents/PSO/watase_soturon/main.tex" 1768994874.98828 2405 e215d036c7e275429abc00d472855f57 ""
+["latex"] 1771481551.96508 "/Users/asaken_n45/Documents/PSO/watase_soturon/main.tex" "main.dvi" "main" 1771481555.02555 0
+  "/Users/asaken_n45/Documents/PSO/watase_soturon/main.tex" 1771481542.03897 8220 b4ee8da3bee0b1b5d925643722e20326 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -86,13 +86,13 @@
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "/usr/local/texlive/2025/texmf-var/web2c/euptex/uplatex.fmt" 1767885107 3337461 ea4183625ff0f6b21b0350a11174beff ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Chapter/001.tex" 1767939493.6544 6388 edc245fb17853f68122d7cbdceeacd4f ""
-  "Chapter/002.tex" 1768994873.04325 10106 cf348ab8ab192bd8a4efd0e1fbd672e4 ""
+  "Chapter/001.tex" 1771481003.54093 7415 b142bedaaa4c1bec880a96f7b8e2ee0a ""
+  "Chapter/002.tex" 1769758187.96761 10100 21be9669188206c99552cf4390b0608a ""
   "Chapter/003.tex" 1768992394.52803 10035 6295fdb2403a5f9dba12d29e758f2723 ""
-  "Chapter/004.tex" 1768992394.52852 8072 34900495cb9479793334cbbcc0910171 ""
-  "Chapter/005.tex" 1768992394.52962 15633 67c8244f27e1d75ee6b4afc2daaf2c87 ""
-  "Chapter/006.tex" 1768992394.53431 15672 d95b9724b5982a00b1f197cc033ae145 ""
-  "Chapter/007.tex" 1768999791.71484 7710 d7130c6dfc29d14650288930d6399cd7 ""
+  "Chapter/004.tex" 1769758187.96684 11412 b6a6b74513e4563ff0de7e3bb595f87d ""
+  "Chapter/005.tex" 1771481003.54091 18529 a33a3a6e01c43d16cc03a2d281af03dc ""
+  "Chapter/006.tex" 1771481003.54096 20844 bf8051a255712f01c208d6a7ea722652 ""
+  "Chapter/007.tex" 1769689133.07115 7710 6d316fb9c54c9e0b065734177f33e011 ""
   "images/flowchart_restart_pso.pdf" 1767852176 45182 e875e381d9383f030dece782fcc097a3 ""
   "images/mini1制約解精度比較_Global_vs_Restart.png" 1767852176 44328 fb1077c1088a480c2d33e4fcdcd125bb ""
   "images/mini3制約解精度比較_Global_vs_Restart.png" 1767852176 45360 fbbe1ffb98d5d4677c6f0725e199813a ""
@@ -101,8 +101,15 @@
   "images/par150gen100restart10gen.png" 1767852176 41165 7358927ae6870b9ac571e79162991afa ""
   "images/parallel_model_final_v3.pdf" 1767852176 38051 43383a283c991a523c2b7dedc28029c6 ""
   "images/parallel_time.png" 1767852176 75121 5c97664024b9ab2d896f1c8a821269c7 ""
+  "images/param_1000_1.5.png" 1771476051.7425 38553 7f030f760b37208e88f6abadc464f676 ""
+  "images/param_1000_3.0.png" 1771476064.42287 38465 ea8c6c3883a2081358e04f831187ca92 ""
+  "images/param_500_1.5.png" 1771476031.95534 54617 52994d0566c653435376d0400ad9e883 ""
+  "images/param_500_3.0.png" 1771476042.15325 55828 b7beeaa35f55646fbeb32b517611547d ""
   "images/pareto_count_analysis_fix.png" 1767852176 53889 41207e008a554049f5e3fe0213651cbf ""
+  "images/pathencode_1.png" 1771402817.70644 409355 d13accd745502687cbad2342bfe9cf96 ""
+  "images/pathencode_taisutaisu.pdf" 1771402509.27564 195468 1edba19627150d322816ad361ceb3529 ""
   "images/pathencoding.pdf" 1767852176 169245 cda1e4f3673beae7036619c282c23faa ""
+  "images/topology_comparison.png" 1771475027.47388 97079 ec716885a559e9698cfa8a4e3ef48439 ""
   "images/卒論用3手法解精度par200gen200.png" 1767852176 20916 fd6b24366a8ff0f1b36a8f72edbad2db ""
   "images/卒論用feasibility_rate_result_fix.png" 1767852176 34382 e20a085ed907350e1e9cb712944681fa ""
   "images/図2-1.pdf" 1767852176 16213 c1053d02cbe328e7b3310bd1453e2862 ""
@@ -116,10 +123,10 @@
   "images/図3-2.pdf" 1767852176 37569 800d37652f5c90d33b6b989e8d613ee0 ""
   "images/図3-3.pdf" 1767852176 51414 fb1adb8195b851cfc18f3e845d57efe3 ""
   "images/図3-4.pdf" 1767852176 34542 098c225b42a27d994434a0713f295b4c ""
-  "main.aux" 1768999825.85826 13550 c872a61496ed8a5d483d7f0fa5b6eafe "latex"
-  "main.bbl" 1768999822.44093 5470 75770ce8c5a1270fd3d3acdf0ce34dbe "bibtex main"
-  "main.tex" 1768994874.98828 2405 e215d036c7e275429abc00d472855f57 ""
-  "main.toc" 1768999825.86016 3102 46952e1f8c61abb1bd1eab3a6be4e9d5 "latex"
+  "main.aux" 1771481553.923 17290 54fdbd8e155ed9a8b979d3efc7289978 "latex"
+  "main.bbl" 1771481551.96338 6014 cb804de5d4d44284d6aa43c2825130a0 "bibtex main"
+  "main.tex" 1771481542.03897 8220 b4ee8da3bee0b1b5d925643722e20326 ""
+  "main.toc" 1771481553.92435 3798 a58bc683311d55dd149b7b07bbebdd26 "latex"
   "soturon.cls" 1767852176 14567 82d6a4224469607797f8f79d729af1dd ""
   (generated)
   "main.aux"

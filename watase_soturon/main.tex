@@ -64,7 +64,7 @@
 \input{Chapter/007.tex}
 
 \chapter*{謝辞}
-本論文の執筆にあたり, 日頃よりご指導いただきました朝香卓也教授に深く感謝します.
+本論文の執筆にあたり, 日頃よりご指導いただきました朝香卓也教授に深く感謝いたします.
 
 \backmatter                         %ここから後付
 
@@ -72,7 +72,105 @@
 \bibliography{ref}
 \bibliographystyle{sieicej}
 
+% ======================================================================
+% 付録
+% ======================================================================
 \appendix
 
+\chapter{PSOパラメータの選定に関する予備実験}
+\label{app:parameter_tuning}
 
+本研究の第6章で用いたPSOのパラメータ設定（慣性重み $w$ および加速係数 $c_1, c_2$ の動的制御）の妥当性を検証するために実施した予備実験の結果を示す．
+
+\section{比較したパラメータ戦略}
+探索性能に与えるパラメータの影響を調査するため，表\ref{tab:param_strategies}に示す5つの戦略と，パラメータをランダムに設定した場合の計6パターンについて比較を行った．
+戦略A (Adaptive) は，本論で採用した手法であり，探索初期は分散を，終盤は収束を重視するようにパラメータを線形に変化させる．
+
+\begin{table}[b]
+  \centering
+  \caption{比較検討したパラメータ戦略一覧}
+  \label{tab:param_strategies}
+  \begin{tabular}{l|l|l} \hline
+    ID & 戦略名 & 概要 \\ \hline
+    A & Adaptive (提案) & $w, c_1$を減少，$c_2$を増加（分散$\to$収束） \\
+    B & High Inertia & $w$を高めに維持（慣性重視） \\
+    C & Low Inertia & $w$を低めに維持（現在位置重視） \\
+    D & High Social & $c_2$を高めに設定（社会性重視） \\
+    E & High Cognitive & $c_1$を高めに設定（認知性重視） \\ \hline
+  \end{tabular}
+\end{table}
+
+\section{実験結果と考察}
+ノード数500および1000，遅延制約倍率1.5倍および3.0倍の計4条件下における，各戦略の最適解到達率（最適度）を図\ref{fig:param_result_all}に示す．
+
+\begin{figure}[h]
+  \centering
+  % 2x2 の配置で4枚のグラフを表示
+  \begin{minipage}[b]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/param_500_1.5.png}
+    \caption{ノード数500, 遅延1.5倍}
+    \label{fig:param_500_15}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/param_500_3.0.png}
+    \caption{ノード数500, 遅延3.0倍}
+    \label{fig:param_500_30}
+  \end{minipage}
+  \vspace{0.5cm} \\ % 上下の間隔
+  \begin{minipage}[b]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/param_1000_1.5.png}
+    \caption{ノード数1000, 遅延1.5倍}
+    \label{fig:param_1000_15}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.48\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/param_1000_3.0.png}
+    \caption{ノード数1000, 遅延3.0倍}
+    \label{fig:param_1000_30}
+  \end{minipage}
+  \caption{条件ごとのパラメータ戦略別最適度の比較}
+  \label{fig:param_result_all}
+\end{figure}
+
+図\ref{fig:param_result_all}の結果を見ると，条件によって優位な戦略が入れ替わる傾向が見られる．
+例えば，ノード数500かつ遅延制約1.5倍という厳しい条件下では戦略A (Adaptive) が高い性能を示しているが，条件が緩い場合やノード数が増加した場合には，戦略B (High Inertia) や戦略D (High Social) が同等以上の結果を示すケースも確認された．
+したがって，あらゆるネットワーク条件において絶対的に最適と言える万能なパラメータ戦略は見出せなかった．
+
+しかし，戦略Aは極端に性能が悪化するケースが少なく，全体を通して比較的安定した探索性能を示している．
+本研究では，ロバスト性を重視する観点から，幅広い条件下で大崩れしにくい戦略Aを採用することとした．
+
+\chapter{ネットワークトポロジによる特性比較}
+\label{app:topology_comparison}
+
+本研究の評価実験では主としてランダムグラフを用いたが，ネットワークの形状がPSOの探索性能に与える影響を確認するため，異なるトポロジモデルを用いた比較実験を行った．
+なお，本付録における実験は，提案手法（Restart PSO）ではなく，リスタート機構を持たない従来の標準的なPSO（Global PSO）を用いて実施したものである．
+
+\section{実験設定}
+比較対象として以下の3つのトポロジモデルを用いた．
+\begin{itemize}
+    \item {ランダムグラフ}: ノード間を一定確率で接続したモデル．
+    \item {グリッドグラフ}: 格子状に規則的に接続されたモデル．
+    \item {BAモデル (スケールフリー)}: 次数分布がべき乗則に従うモデル．
+\end{itemize}
+ノード数を100から1900まで変化させ，遅延制約のみを考慮した条件下での解精度（最適度）を計測した．
+
+\section{実験結果}
+各トポロジにおけるノード数と最適度の関係を図\ref{fig:topology_result}に示す．
+
+\begin{figure}[h]
+  \centering
+  % 資料3枚目のグラフ画像を使用
+  \includegraphics[width=14cm]{images/topology_comparison.png}
+  \caption{トポロジ種別による解精度の比較（Global PSO）}
+  \label{fig:topology_result}
+\end{figure}
+
+図\ref{fig:topology_result}より，グリッドグラフにおいてはノード数が増加しても比較的高い精度が維持されている．これは，経路の選択肢が幾何学的に制限されており，探索空間が比較的単純であるためと考えられる．
+一方，BAモデルにおいては，ノード数の増加に伴い急激に精度が低下する傾向が見られた．
+本研究で採用したランダムグラフは，これらの中間的な特性を示しており，一般的なネットワーク性能を評価する上で妥当なモデルであるといえる．
 \end{document}

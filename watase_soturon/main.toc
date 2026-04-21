@@ -14,28 +14,36 @@
 \contentsline {section}{\numberline {3.3}粒子群最適化 (PSO)}{11}{}%
 \contentsline {section}{\numberline {3.4}早熟収束とリスタート戦略}{14}{}%
 \contentsline {chapter}{\numberline {第4章}経路制御における既存研究と課題}{15}{}%
-\contentsline {section}{\numberline {4.1}厳密解法とその限界}{15}{}%
-\contentsline {section}{\numberline {4.2}他のメタヒューリスティクスによるアプローチ}{16}{}%
-\contentsline {section}{\numberline {4.3}PSOを用いた経路制御手法}{16}{}%
-\contentsline {section}{\numberline {4.4}本研究の位置付け}{17}{}%
-\contentsline {chapter}{\numberline {第5章}提案手法}{18}{}%
-\contentsline {section}{\numberline {5.1}概要}{18}{}%
-\contentsline {section}{\numberline {5.2}優先度ベースエンコーディング}{19}{}%
-\contentsline {section}{\numberline {5.3}適応度関数と動的ペナルティ}{20}{}%
-\contentsline {section}{\numberline {5.4}空間的lBestトポロジーとリスタート戦略}{21}{}%
-\contentsline {section}{\numberline {5.5}並列化実装}{21}{}%
-\contentsline {section}{\numberline {5.6}アルゴリズム全体の手順}{22}{}%
-\contentsline {paragraph}{初期化 (Lines 1-2)}{23}{}%
-\contentsline {paragraph}{並列評価フェーズ (Lines 4-10)}{24}{}%
-\contentsline {paragraph}{最良解の更新と停滞検知 (Lines 11-17)}{24}{}%
-\contentsline {paragraph}{リスタート戦略 (Lines 18-22)}{24}{}%
-\contentsline {paragraph}{粒子の移動 (Lines 23-24)}{24}{}%
-\contentsline {chapter}{\numberline {第6章}評価実験}{26}{}%
-\contentsline {section}{\numberline {6.1}概要}{26}{}%
-\contentsline {section}{\numberline {6.2}実験環境とパラメータ設定}{26}{}%
-\contentsline {section}{\numberline {6.3}並列化による計算時間短縮効果}{28}{}%
-\contentsline {section}{\numberline {6.4}解の探索性能と精度の評価}{30}{}%
-\contentsline {section}{\numberline {6.5}厳しい制約条件下でのロバスト性}{33}{}%
-\contentsline {section}{\numberline {6.6}考察}{34}{}%
-\contentsline {chapter}{\numberline {第7章}結論}{35}{}%
-\contentsline {chapter}{参考文献}{39}{}%
+\contentsline {section}{\numberline {4.1}経路制御技術の分類と進化}{15}{}%
+\contentsline {section}{\numberline {4.2}厳密解法とその限界}{16}{}%
+\contentsline {section}{\numberline {4.3}他のメタヒューリスティクスによるアプローチ}{16}{}%
+\contentsline {section}{\numberline {4.4}PSOを用いた経路制御手法}{17}{}%
+\contentsline {section}{\numberline {4.5}本研究の位置付け}{18}{}%
+\contentsline {chapter}{\numberline {第5章}提案手法}{19}{}%
+\contentsline {section}{\numberline {5.1}概要}{19}{}%
+\contentsline {section}{\numberline {5.2}提案手法の特徴}{20}{}%
+\contentsline {section}{\numberline {5.3}優先度ベースエンコーディング}{20}{}%
+\contentsline {section}{\numberline {5.4}適応度関数と動的ペナルティ}{22}{}%
+\contentsline {section}{\numberline {5.5}空間的lBestトポロジーとリスタート戦略}{22}{}%
+\contentsline {section}{\numberline {5.6}並列化実装}{23}{}%
+\contentsline {section}{\numberline {5.7}アルゴリズム全体の手順}{24}{}%
+\contentsline {paragraph}{初期化 (Lines 1-2)}{25}{}%
+\contentsline {paragraph}{並列評価フェーズ (Lines 4-10)}{26}{}%
+\contentsline {paragraph}{最良解の更新と停滞検知 (Lines 11-17)}{26}{}%
+\contentsline {paragraph}{リスタート戦略 (Lines 18-22)}{26}{}%
+\contentsline {paragraph}{粒子の移動 (Lines 23-24)}{26}{}%
+\contentsline {chapter}{\numberline {第6章}評価実験}{28}{}%
+\contentsline {section}{\numberline {6.1}概要}{28}{}%
+\contentsline {section}{\numberline {6.2}実験環境とパラメータ設定}{29}{}%
+\contentsline {section}{\numberline {6.3}並列化による計算時間短縮効果}{31}{}%
+\contentsline {section}{\numberline {6.4}解の探索性能と精度の評価}{33}{}%
+\contentsline {section}{\numberline {6.5}厳しい制約条件下でのロバスト性}{35}{}%
+\contentsline {section}{\numberline {6.6}エンコーディング処理のボトルネック解析}{37}{}%
+\contentsline {chapter}{\numberline {第7章}結論}{40}{}%
+\contentsline {chapter}{参考文献}{44}{}%
+\contentsline {chapter}{\numberline {付録A}PSOパラメータの選定に関する予備実験}{47}{}%
+\contentsline {section}{\numberline {A.1}比較したパラメータ戦略}{47}{}%
+\contentsline {section}{\numberline {A.2}実験結果と考察}{48}{}%
+\contentsline {chapter}{\numberline {付録B}ネットワークトポロジによる特性比較}{50}{}%
+\contentsline {section}{\numberline {B.1}実験設定}{50}{}%
+\contentsline {section}{\numberline {B.2}実験結果}{50}{}%

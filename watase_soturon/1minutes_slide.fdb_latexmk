@@ -1,6 +1,6 @@
 # Fdb version 4
-["lualatex"] 1768887762.55234 "/Users/asaken_n45/Documents/PSO/watase_soturon/1minutes_slide.tex" "1minutes_slide.pdf" "1minutes_slide" 1768887764.59048 0
-  "/Users/asaken_n45/Documents/PSO/watase_soturon/1minutes_slide.tex" 1768887762.26486 5326 34ed3fb7f9f2b648c9b7636cb2cfd7a8 ""
+["lualatex"] 1770712472.41019 "/Users/asaken_n45/Documents/PSO/watase_soturon/1minutes_slide.tex" "1minutes_slide.pdf" "1minutes_slide" 1770712474.49659 0
+  "/Users/asaken_n45/Documents/PSO/watase_soturon/1minutes_slide.tex" 1770712472.11813 5360 79ccca7c6d191ab0ed0f81906ef5b15f ""
   "/Users/asaken_n45/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/bizudpgothic-bold.luc" 1768036639.80838 1186904 17e2341eba769fdd75a0e97c3b06fafa ""
   "/Users/asaken_n45/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/bizudpgothic-regular.luc" 1768036639.50325 1179386 8bf11afb5f0a024c9ef87ea9f62b9e1f ""
   "/Users/asaken_n45/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1768035928.94366 1924615 00e631720a15f814ed6146121037dccf ""
@@ -334,14 +334,14 @@
   "/usr/local/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.sty" 1720988330 18655 988d7f23464591f321cce5720dc67e3d ""
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1767885176 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1767885099 5582806 7dada99133c8e86cde0bacd652aefd28 ""
-  "1minutes_slide.aux" 1768887764.32239 637 0fe2f85f245636a6f7cefc39f2b1c776 "lualatex"
-  "1minutes_slide.nav" 1768887764.32299 307 9e520c26371a1250ff9fc1fe87f9c655 "lualatex"
-  "1minutes_slide.out" 1768887764.01613 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "1minutes_slide.tex" 1768887762.26486 5326 34ed3fb7f9f2b648c9b7636cb2cfd7a8 ""
+  "1minutes_slide.aux" 1770712474.19405 637 0fe2f85f245636a6f7cefc39f2b1c776 "lualatex"
+  "1minutes_slide.nav" 1770712474.19464 307 9e520c26371a1250ff9fc1fe87f9c655 "lualatex"
+  "1minutes_slide.out" 1770712473.87446 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "1minutes_slide.tex" 1770712472.11813 5360 79ccca7c6d191ab0ed0f81906ef5b15f ""
   "BIZUDPGothic-Bold.ttf" 1768036513.76428 4485780 12b7ee9b7cca5e0241318988c82d0783 ""
   "BIZUDPGothic-Regular.ttf" 1768036513.78461 4515260 a1ba85e1dc8df016d0c66a3ab298fcd2 ""
+  "images/20260210.pdf" 1770712338.99492 636289 ddab068425f991a1d03ea5a17e5eb8eb ""
   "images/Asakalab_logo.png" 1768218425.42813 6373 c704dcd1474152ec59631e82e7aecc6b ""
-  "images/MCOP1min.pdf" 1768720970.57713 636103 a2096c5b1d0507d947587f67d5d50b54 ""
   "images/fig3_4_restart_strategy_fixed_v66.png" 1768713765.07081 59540 e62b0fae510ccf69114da8e7b2b13764 ""
   (generated)
   "1minutes_slide.aux"

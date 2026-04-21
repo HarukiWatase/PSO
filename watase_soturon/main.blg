@@ -5,45 +5,45 @@ The style file: sieicej.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: ref.bib
-You've used 29 entries,
+You've used 32 entries,
             4010 wiz_defined-function locations,
-            1003 strings with 9975 characters,
-and the built_in function-call counts, 44830 in all, are:
-= -- 5258
-> -- 222
+            1029 strings with 10503 characters,
+and the built_in function-call counts, 49922 in all, are:
+= -- 5920
+> -- 261
 < -- 0
-+ -- 110
-- -- 63
-* -- 2311
-:= -- 4825
-add.period$ -- 29
-call.type$ -- 29
-change.case$ -- 24
++ -- 125
+- -- 75
+* -- 2535
+:= -- 5447
+add.period$ -- 32
+call.type$ -- 32
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 648
-empty$ -- 3855
-format.name$ -- 248
-if$ -- 11576
+cite$ -- 32
+duplicate$ -- 698
+empty$ -- 4273
+format.name$ -- 296
+if$ -- 12868
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 32
-newline$ -- 171
-num.names$ -- 29
-pop$ -- 327
+int.to.str$ -- 32
+missing$ -- 33
+newline$ -- 187
+num.names$ -- 32
+pop$ -- 365
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1994
+skip$ -- 2279
 stack$ -- 0
-substring$ -- 10167
-swap$ -- 165
+substring$ -- 11267
+swap$ -- 173
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 278
-width$ -- 31
-write$ -- 257
-is.kanji.str$ -- 2122
+while$ -- 320
+width$ -- 34
+write$ -- 282
+is.kanji.str$ -- 2296

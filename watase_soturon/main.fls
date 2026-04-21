@@ -284,6 +284,14 @@ INPUT ./images/pareto_count_analysis_fix.png
 INPUT ./images/pareto_count_analysis_fix.png
 INPUT ./images/pareto_count_analysis_fix.png
 INPUT extractbb -B cropbox -O images/pareto_count_analysis_fix.png
+INPUT ./images/pathencode_1.png
+INPUT ./images/pathencode_1.png
+INPUT ./images/pathencode_1.png
+INPUT extractbb -B cropbox -O images/pathencode_1.png
+INPUT ./images/pathencode_taisutaisu.pdf
+INPUT ./images/pathencode_taisutaisu.pdf
+INPUT ./images/pathencode_taisutaisu.pdf
+INPUT extractbb -B cropbox -O images/pathencode_taisutaisu.pdf
 INPUT ./Chapter/007.tex
 INPUT ./Chapter/007.tex
 INPUT Chapter/007.tex
@@ -291,4 +299,24 @@ INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT ./images/param_500_1.5.png
+INPUT ./images/param_500_1.5.png
+INPUT ./images/param_500_1.5.png
+INPUT extractbb -B cropbox -O images/param_500_1.5.png
+INPUT ./images/param_500_3.0.png
+INPUT ./images/param_500_3.0.png
+INPUT ./images/param_500_3.0.png
+INPUT extractbb -B cropbox -O images/param_500_3.0.png
+INPUT ./images/param_1000_1.5.png
+INPUT ./images/param_1000_1.5.png
+INPUT ./images/param_1000_1.5.png
+INPUT extractbb -B cropbox -O images/param_1000_1.5.png
+INPUT ./images/param_1000_3.0.png
+INPUT ./images/param_1000_3.0.png
+INPUT ./images/param_1000_3.0.png
+INPUT extractbb -B cropbox -O images/param_1000_3.0.png
+INPUT ./images/topology_comparison.png
+INPUT ./images/topology_comparison.png
+INPUT ./images/topology_comparison.png
+INPUT extractbb -B cropbox -O images/topology_comparison.png
 INPUT main.aux

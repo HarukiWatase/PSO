@@ -37,7 +37,7 @@
 \setbeamercolor{block title}{fg=white, bg=TMUNavy}
 \setbeamercolor{block body}{fg=black, bg=white}
 
-\setbeamerfont{title}{size=\Huge, series=\bfseries}
+\setbeamerfont{title}{size=\huge, series=\bfseries}
 \setbeamerfont{author}{size=\large}
 \setbeamerfont{institute}{size=\Large}
 \setbeamerfont{block title}{size=\Large, series=\bfseries}
@@ -51,30 +51,22 @@
 \setbeamersize{text margin left=1.5cm, text margin right=1.5cm}
 
 % --- 本文 ---
-\title{\texorpdfstring{ボ\hspace{0.06em}ト\hspace{-0.2em}ルネックリンク最大化を目的とした\\多制約最適経路問題における並列化改良型PSO}{ボトルネックリンク最大化を目的とした多制約最適経路問題における並列化改良型PSO}}
+\title{\texorpdfstring{Restart PSO：ボ\hspace{0.06em}ト\hspace{-0.2em}ルネックリンク最大化を目的とした\\多制約最適経路問題における並列化改良型PSO}{ボトルネックリンク最大化を目的とした多制約最適経路問題における並列化改良型PSO}}
 
-\author{22141073 \quad 渡瀬 遥己 \quad 指導教員：朝香 卓也}
+\author{渡瀬 遥己 \quad 朝香 卓也 \quad 東京都立大学}
 \date{}
 
 \begin{document}
 \begin{frame}[fragile]
 
-    % ============================================================
-    % ▼▼▼ フッター (TikZ overlayで右下に配置) ▼▼▼
-    % ============================================================
-    \begin{tikzpicture}[remember picture, overlay]
-        % xshiftで右端からの距離、yshiftで下端からの距離を調整
-        \node[anchor=south east, xshift=-1.5cm, yshift=0.8cm] at (current page.south east) {
-            \footnotesize \textcolor{TextBlack}{東京都立大学主催2025 年度電子情報システム工学科特別研究発表会，2026 年2 月16 日，東京都立大学日野キャンパス2 号館講義室A}
-        };
-    \end{tikzpicture}
+    
     % ============================================================
 
-\vspace*{-1.75cm}
+    \vspace{-0.7cm}
 % ============================================================
 % タイトル
 % ============================================================
-\begin{beamercolorbox}[wd=\paperwidth,sep=0.7cm,center]{title}
+\begin{beamercolorbox}[wd=\paperwidth,sep=1.5cm,center]{title}
     \usebeamerfont{title}\inserttitle\par
     \vspace{0.5cm}
     \usebeamerfont{author}\insertauthor\par
@@ -143,6 +135,7 @@
                     \begin{itemize}
                         \item 生物の群れ行動を模倣した群知能アルゴリズム
                         \item 粒子が探索空間を移動し解を探索
+                        \item 粒子の位置情報を具体的な経路へと変換して最適化
                     \end{itemize}
                     \vspace{0.5em}
                     \textbf{■ 更新メカニズム}
@@ -152,20 +145,20 @@
                         \item これらを頼りに速度$\boldsymbol{v}$と位置$\boldsymbol{x}$を更新
                     \end{itemize}
                 \end{column}
-                \begin{column}{0.55\linewidth}
+                \begin{column}{0.52\linewidth}
                     \centering
-                    \includegraphics[width=14.5cm, keepaspectratio]{images/big図3-1.pdf}
+                    \includegraphics[width=16.0cm, keepaspectratio]{images/big図3-1.pdf}
                     \\ \small{図2: 粒子の探索挙動}
                 \end{column}
             \end{columns}
         \end{block}
 
-        \vspace{0.3cm}
+        \vspace{0.5cm}
 
         % --- 4. 評価(A) ---
         \begin{block}{4. 評価(A): 計算時間のスケーラビリティ}
             \centering
-            \includegraphics[width=43.3cm, height=20.0cm, keepaspectratio]{images/計算時間比較_3制約3手法_bigger2.png} 
+            \includegraphics[width=43.3cm, height=20.0cm, keepaspectratio]{images/スクリーンショット 2026-03-04 15.15.12.png} 
             \\ \small{図4: 制約数3における平均計算時間の推移}
             
             \vspace{0.5cm}
@@ -200,17 +193,18 @@
         % --- 項目1の図部分 ---
         \begin{tcolorbox}[colback=white, colframe=white, boxrule=0pt, left=0pt, right=0pt, top=5pt, bottom=5pt]
             \centering
-            \includegraphics[width=33.4cm, keepaspectratio]{images/図2-6.pdf}
+            \includegraphics[width=33.2cm, keepaspectratio]{images/図2-6.pdf}
             \\ \small{図1: 多制約最適経路問題の例}
         \end{tcolorbox}
 
-        \vspace{0.3cm}
+        \vspace{-0.1cm}
 
         % --- 3. 提案手法 ---
         \begin{block}{3. 提案手法: Restart PSO}
             \begin{columns}[T, totalwidth=\linewidth]
                 \begin{column}{1.0\linewidth}
                     \normalsize
+                    既存のPSO分野で知られるlbestやリスタート戦略を、未適用であったネットワーク最適経路探索に応用\\
                     \textbf{① lBest(Local Best) ト\hspace{-0.1em}ポロジー}
                     \begin{itemize}
                         \item 近傍粒子間のみの情報共有による、群全体の多様性維持
@@ -223,19 +217,19 @@
         
                     \textbf{③ マルチコア並列化}
                     \begin{itemize}
-                        \item マスター・ワーカーモデルによるCPU4コアでの並列化
+                        \item マスター・ワーカーモデルによるCPUコアでの並列化
                     \end{itemize}
                 \end{column}
             \end{columns}
             
-            \vspace{0.3cm}
+            \vspace{0.2cm}
             
             \centering
             \includegraphics[width=39.0cm, height=14.1cm, keepaspectratio]{images/fig3_4_restart_strategy_fixed.pdf}
             \\ \small{図3: リスタート\hspace{-0.2em}戦略による局所解脱出の概念図}
         \end{block}
 
-        \vspace{0.3cm}
+        \vspace{0.1cm}
 
         % --- 5. 評価(B) ---
         \begin{block}{5. 評価(B): 厳しい制約下でのロバスト\hspace{-0.2em}性}
